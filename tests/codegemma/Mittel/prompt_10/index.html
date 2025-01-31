@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-navigation">
+        <div class="tab active">Übersicht</div>
+        <div class="tab">Details</div>
+        <div class="tab">Einstellungen</div>
+    </div>
+</body>
+
+</html>

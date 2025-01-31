@@ -1,0 +1,101 @@
+
+Hier ist ein Beispiel für eine Tab-Navigationsleiste mit den drei Tabs "Übersicht", "Details" und "Einstellungen":
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab Navigation Example</title>
+  <style>
+    /* Style for the tab navigation */
+    .tab-navigation {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    
+    /* Style for the tab links */
+    .tab-link {
+      color: #444;
+      text-decoration: none;
+      margin-right: 20px;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 10px;
+    }
+    
+    /* Style for the active tab link */
+    .tab-link.active {
+      color: #444;
+      text-decoration: none;
+      margin-right: 20px;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+    }
+    
+    /* Style for the tab content */
+    .tab-content {
+      display: none;
+    }
+    
+    /* Style for the active tab content */
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab-navigation">
+    <a href="#" class="tab-link active" data-target="#tab1">Übersicht</a>
+    <a href="#" class="tab-link" data-target="#tab2">Details</a>
+    <a href="#" class="tab-link" data-target="#tab3">Einstellungen</a>
+  </div>
+  
+  <!-- Tab content for the first tab -->
+  <div id="tab1" class="tab-content active">
+    <p>Inhalt des ersten Tabs.</p>
+  </div>
+  
+  <!-- Tab content for the second tab -->
+  <div id="tab2" class="tab-content">
+    <p>Inhalt des zweiten Tabs.</p>
+  </div>
+  
+  <!-- Tab content for the third tab -->
+  <div id="tab3" class="tab-content">
+    <p>Inhalt des dritten Tabs.</p>
+  </div>
+</body>
+</html>
+```
+Dieses Beispiel verwendet HTML5, um die Tab-Navigationsleiste zu erstellen. Es enthält eine Liste mit drei Links, die auf verschiedene Tab-Inhalte verweisen. Die Inhalte der Tabs werden in separaten DIV-Elementen gespeichert und können mittels JavaScript-Code als aktiv markiert werden.
+
+Die Stylesheet-Datei enthält CSS-Regeln für die Darstellung der Tabs und ihre Inhalte. Hier sind einige wichtige Regeln aufgeführt:
+
+* `.tab-navigation` definiert die Aussehen der Tab-Navigationsleiste.
+* `.tab-link` definiert das Aussehen der Tab-Links.
+* `.tab-link.active` definiert das Aussehen des aktiven Tab-Links.
+* `.tab-content` definiert das Aussehen des Inhalts einer Tab-Seite.
+* `.tab-content.active` definiert das Aussehen des aktiven Tab-Inhalts.
+
+Dieses Beispiel verwendet JavaScript, um die Aktivierung von Tabs zu implementieren. Hier ist ein Beispiel für eine JavaScript-Methode, die einen Tab aktiviert:
+```
+function activateTab(target) {
+  // Deaktiviere alle anderen Tabs
+  const otherTabs = document.querySelectorAll('.tab-link');
+  for (let i = 0; i < otherTabs.length; i++) {
+    otherTabs[i].classList.remove('active');
+  }
+  
+  // Aktiviere den gewünschten Tab
+  const targetTab = document.querySelector(target);
+  targetTab.classList.add('active');
+}
+```
+Diese Methode verwendet die `querySelector`-Methode von JavaScript, um nach Tabs zu suchen und die Klasse `.tab-link` anzuwenden. Sie entfernt dann die Klasse `.active` von allen anderen Tabs und fügt diese Klasse dem gewünschten Tab hinzu.
+
+Um den Tab zu aktivieren, können Sie die `activateTab`-Methode aufrufen, indem Sie den Selektor für das gewünschte Tab-Inhalt als Parameter übergeben:
+```
+// Aktiviere den ersten Tab
+activateTab('#tab1');
+```
+Dieser Code ruft die `activateTab`-Methode mit dem Selektor `#tab1` auf, der auf das erste Tab-Inhalt verweist.
+

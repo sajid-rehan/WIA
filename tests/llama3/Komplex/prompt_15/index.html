@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dashboard {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .circle-diagram {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .bar-chart {
+            width: 400px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .stats-table {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dashboard"></div>
+
+    <script>
+        // Set up the dashboard container
+        var dashboard = d3.select("#dashboard")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%");
+
+        // Circle diagram
+        var circleDiagram = dashboard.append("g")
+            .classed("circle-diagram", true);
+
+        d3pie(circleDiagram, {
+            type: "donut",
+            radius: 80,
+            innerRadius: 40,
+            startAngle: 0,
+            endAngle: 2 * Math.PI,
+            data: [
+                { label: "Sales", value: 30 },
+                { label: "Marketing", value: 20 },
+                { label: "Support", value: 50 }
+            ]
+        });
+
+        // Bar chart
+        var barChart = dashboard.append("g")
+            .classed("bar-chart", true);
+
+        d3.json("data.json", function (error, data) {
+            if (error) {
+                console.error(error);
+            } else {
+                var bars = barChart.selectAll("rect")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                    .attr("x", 0)
+                    .attr("y", 0)
+                    .attr("width", function (d) { return d.value * 10; })
+                    .attr("height", 20);
+
+                bars.append("text")
+                    .text(function (d) { return d.label; });
+            }
+        });
+
+        // Statistics table
+        var statsTable = dashboard.append("table")
+            .classed("stats-table", true)
+            .append("tbody");
+
+        d3.csv("stats.csv", function (error, data) {
+            if (error) {
+                console.error(error);
+            } else {
+                var rows = statsTable.selectAll("tr")
+                    .data(data)
+                    .enter()
+                    .append("tr");
+
+                rows.append("td")
+                    .text(function (d) { return d.category; });
+
+                rows.append("td")
+                    .text(function (d) { return d.value; });
+            }
+        });
+    </script>
+</body>
+
+</html>

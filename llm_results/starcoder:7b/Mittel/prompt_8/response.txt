@@ -1,0 +1,87 @@
+ Diese Seite nutzt [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) zur Ausrichtung des Inhalts.</p>
+                </div>
+              </li>
+            <li class="media">
+              <img src="{{ site.baseurl }}/images/bootstrap-logo.svg" alt="">
+              <div class="media-body">
+                <h5><a href="#">Bootstrap</a></h5>
+                <p class="small text-muted">
+                  Ein fertiges responsive HTML5-Template für Websites und Apps.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    <!--/Section: Main info-->
+  {% endif %}
+
+  {% if site.posts[0] %}
+    <h2 class="text-center">Blogartikel</h2>
+
+    <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        {% assign counter = 1 %}
+        {% for post in site.posts limit:3 %}
+          {% if counter == 1 %}
+            <li data-target="#blogCarousel" data-slide-to="{{counter}}" class="active"></li>
+          {% else %}
+            <li data-target="#blogCarousel" data-slide-to="{{counter}}"></li>
+          {% endif %}
+
+          {% assign counter = counter | plus: 1 %}
+        {% endfor %}
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        {% assign counter = 1 %}
+
+        {% for post in site.posts limit:3 %}
+          {% if counter == 1%}
+            <div class="item active">
+              <a href="{{post.url | prepend: site.baseurl}}"><img src="{{site.baseurl}}/images/blog/{{ post.image }}" alt="" width="80%"></a>
+
+              <div class="carousel-caption">
+                <h3>{{post.title}}</h3>
+
+                {% if post.subtitle %}
+                  <p>{{post.subtitle}}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% else%}
+            <div class="item">
+              <a href="{{post.url | prepend: site.baseurl}}"><img src="{{site.baseurl}}/images/blog/{{ post.image }}" alt="" width="80%"></a>
+
+              <div class="carousel-caption">
+                <h3>{{post.title}}</h3>
+
+                {% if post.subtitle %}
+                  <p>{{post.subtitle}}</p>
+                {% endif %}
+              </div>
+            </div>
+          {%endif%}
+
+          {% assign counter = counter | plus: 1 %}
+        {% endfor %}
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#blogCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Vorheriger Artikel</span>
+      </a>
+
+      <a class="right carousel-control" href="#blogCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Nächster Artikel</span>
+      </a>
+    </div><!--/Slider-->
+  {% endif %}
+<!-- Blog Section End-->
+
+

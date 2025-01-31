@@ -1,0 +1,82 @@
+Hier ist ein Beispiel für ein responsives Layout mit einem Header, einer Sidebar und einem Hauptinhalt:
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Layout</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		/* Header */
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		/* Sidebar */
+		aside {
+			width: 200px; /* breite der sidebar */
+			height: calc(100vh - 40px); /* height der sidebar, abzüglich header und footer */
+			background-color: #666;
+			padding: 20px;
+			margin-right: 10px; /* margin rechts von sidebar */
+		}
+		
+		/* Hauptinhalt */
+		main {
+			flex-grow: 1; /* Hauptinhalt füllt das restliche area aus */
+			padding: 20px;
+			background-color: #f9f9f9;
+		}
+		
+		/* Media Queries für responsive Design */
+		@media only screen and (max-width: 768px) {
+			main {
+				width: calc(100vw - 200px); /* breite des Hauptinhalts auf der kleinen ausgabe */
+				margin-left: 10px; /* margin links von Hauptinhalt auf der kleinen ausgabe */
+			}
+			aside {
+				height: calc(100vh - 40px); /* height der sidebar auf der kleinen ausgabe */
+				width: 150px; /* breite der sidebar auf der kleinen ausgabe */
+			}
+		}
+		
+		@media only screen and (max-width: 480px) {
+			main {
+				width: calc(100vw - 100px); /* breite des Hauptinhalts auf der sehr kleinen ausgabe */
+				margin-left: 5px; /* margin links von Hauptinhalt auf der sehr kleinen ausgabe */
+			}
+			aside {
+				height: calc(100vh - 40px); /* height der sidebar auf der sehr kleinen ausgabe */
+				width: 100px; /* breite der sidebar auf der sehr kleinen ausgabe */
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Responsive Layout</h1>
+	</header>
+	<main>
+		<!-- Hauptinhalt wird hier hinzugefügt -->
+	</main>
+	<aside>
+		<!-- Sidebar-Inhalt wird hier hinzugefügt -->
+	</aside>
+</body>
+</html>
+```
+Das Layout besteht aus drei Teilen: einem Header, einer Sidebar und einem Hauptinhalt. Der Header hat eine schwarze Hintergrundfarbe und eine weiße Textfarbe.
+
+Die Sidebar hat eine graue Hintergrundfarbe und eine breite von 200 Pixeln. Auf kleinen Ausgaben wird die breite der Sidebar auf 150 Pixel reduziert, und auf sehr kleinen Ausgaben auf 100 Pixel.
+
+Der Hauptinhalt hat keine feste Breite und füllt das restliche Area aus. Auf kleinen Ausgaben wird die Breite des Hauptinhalts auf die verbleibende Breite reduziert, und auf sehr kleinen Ausgaben wird die Breite auf 100 Pixel reduziert.
+

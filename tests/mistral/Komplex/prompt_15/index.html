@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" integrity="sha384-KyZerp/JNkG87c5heKMa9plowMOZzufczsFe2DtSdvey+YlidkWmBcXCr6pCgZc9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Dashboard</h1>
+
+        <!-- Kreisdiagramm -->
+        <canvas id="circleChart"></canvas>
+
+        <!-- Balkendiagramm -->
+        <h2>Balkendiagramm</h2>
+        <div class="row">
+            <div class="col-6">
+                <canvas id="barChart1"></canvas>
+            </div>
+            <div class="col-6">
+                <canvas id="barChart2"></canvas>
+            </div>
+        </div>
+
+        <!-- Statistiken -->
+        <h2>Statistiken</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Statistik</th>
+                    <th>Wert</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Anzahl Datenpunkte</td>
+                    <td id="dataPointsStatistic"></td>
+                </tr>
+                <tr>
+                    <td>Durchschnittswert</td>
+                    <td id="averageValueStatistic"></td>
+                </tr>
+                <tr>
+                    <td>Maximalwert</td>
+                    <td id="maxValueStatistic"></td>
+                </tr>
+                <tr>
+                    <td>Minimalwert</td>
+                    <td id="minValueStatistic"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript für die Diagramme -->
+    <script>
+        // Kreisdiagramm
+        const circleChart = document.getElementById('circleChart').getContext('2d');
+        new Chart(circleChart, {
+            type: 'doughnut',
+            data: {
+                labels: ['Label1', 'Label2'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19],
+                    backgroundColor: ['#3e95cd', '#8e5ea2'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Kreisdiagramm'
+                    }
+                }
+            }
+        });
+
+        // Balkendiagramme
+        const barChart1 = document.getElementById('barChart1').getContext('2d');
+        new Chart(barChart1, {
+            type: 'bar',
+            data: {
+                labels: ['Januar', 'Februar', 'März'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3],
+                    backgroundColor: '#3e95cd'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Balkendiagramm 1'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const barChart2 = document.getElementById('barChart2').getContext('2d');
+        new Chart(barChart2, {
+            type: 'bar',
+            data: {
+                labels: ['April', 'Mai', 'Juni'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [5, 2, 3],
+                    backgroundColor: '#8e5ea2'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Balkendiagramm 2'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Statistiken
+        const dataPoints = 50;
+        const averageValue = 21.5;
+        const maxValue = 34;
+        const minValue = 8;
+
+        document.getElementById('dataPointsStatistic').textContent = dataPoints;
+        document.getElementById('averageValueStatistic').textContent = averageValue;
+        document.getElementById('maxValueStatistic').textContent = maxValue;
+        document.getElementById('minValueStatistic').textContent = minValue;
+    </script>
+</body>
+</html>

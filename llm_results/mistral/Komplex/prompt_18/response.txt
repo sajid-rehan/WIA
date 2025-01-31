@@ -1,0 +1,49 @@
+1. Planung: Stellen Sie sicher, dass Ihre Website auf die Bedürfnisse von Benutzern aller Fähigkeiten zugeschnitten ist. Verwenden Sie ein Grid System und CSS-Frameworks, um eine leichte Navigation und Lesbarkeit zu gewährleisten.
+
+2. HTML-Markup: Verwenden Sie ARIA (Accessible Rich Internet Applications) Labels für alle interaktiven Elemente, um ihre Funktion an die Screen Reader zu übermitteln. Hierbei gilt es, sowohl den Label als auch das Interaktivelement durch ARIA-Roles und -Properties zu beschreiben:
+
+```html
+<button aria-label="Hier klicken Sie auf ein Button">Button</button>
+<input aria-label="Bitte geben Sie hier Ihren Namen ein" type="text">
+```
+
+3. Formularfelder: Verwenden Sie ARIA-Label für alle Formularfelder, um ihnen eine Beschreibung zu geben und ihre Funktion an Screen Reader übermitteln zu können:
+
+```html
+<label for="name">Name:</label>
+<input id="name" aria-label="Bitte geben Sie hier Ihren Namen ein" type="text">
+```
+
+4. Bilder: Verwenden Sie Alt-Attribute, um Bildern eine Beschreibung zu geben und damit ihre Funktion an Screen Reader übermitteln zu können. Es gibt auch ARIA-Roles wie "img" und "decribeby", die dazu verwendet werden können, wenn es auf mehrere Bilder ankommt oder das Bild nicht in der Nähe des Labels ist:
+
+```html
+<img src="image.jpg" alt="Bildbeschreibung">
+<img aria-label="Bildbeschreibung" role="img" src="image.jpg">
+<img src="image.jpg" role="img" aria-describedby="description">
+<div id="description">Bildbeschreibung</div>
+```
+
+5. Tabs und Navigation: Verwenden Sie ARIA-Roles wie "tablist", "tab" und "tabpanel" für Tabs, um Ihre Funktion an Screen Reader zu übermitteln:
+
+```html
+<ul role="tablist">
+  <li role="presentation">...</li>
+  <li role="tab" id="tab1" aria-controls="content1" aria-selected="true">...</li>
+  <li role="tab" id="tab2" aria-controls="content2">...</li>
+</ul>
+<div id="content1" role="tabpanel" aria-labelledby="tab1">...</div>
+<div id="content2" role="tabpanel" aria-labelledby="tab2">...</div>
+```
+
+6. Videos: Verwenden Sie ARIA-Roles wie "video" und "button" für die Steuerelemente, um ihre Funktion an Screen Reader zu übermitteln:
+
+```html
+<video controls aria-label="Video mit Video-Beschreibung">
+  <source src="video.mp4" type="video/mp4">
+</video>
+```
+
+7. Testen und Verbessern: Testen Sie Ihre Website auf verschiedenen Geräten, Betriebssystemen und Screen Readern, um sicherzustellen, dass sie funktioniert und barrierefrei ist. Verwenden Sie Tools wie Lighthouse für Chrome oder WAVE Tool zum Validieren von Accessibility-Problemen und zur Verbesserung Ihrer Website.
+
+Mit dieser Liste haben Sie eine Vorlage erhalten, um eine barrierefreie Webseite mit ARIA-Labels für alle interaktiven Elemente zu erstellen. Verwenden Sie diese Richtlinien stets bei der Entwicklung neuer Seiten oder beim Überarbeiten bestehender Inhalte, um Ihre Website so effektiv wie möglich für alle Benutzer zu gestalten.
+

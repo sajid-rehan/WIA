@@ -1,0 +1,132 @@
+ Ich werde Ihnen hierbei einen Beispiel-Code in JavaScript bieten, der ein mehrstufiges Formular mit einer Fortschrittsanzeige implementiert, das nacheinander persönliche Daten, Adresse und Zahlungsinformationen abfragt. Das Beispiel basiert auf HTML, CSS und jQuery:
+
+HTML-Code:
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+ <meta charset="UTF-8">
+ <title>Formular</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="container">
+ <h1>Formular</h1>
+ <form id="myForm">
+ <div class="progress-bar">
+ <span class="step active" id="step1"></span>
+ <span class="step" id="step2"></span>
+ <span class="step" id="step3"></span>
+ </div>
+ <div id="personalInfo" class="form-group">
+ <!-- Persönliche Daten -->
+ </div>
+ <div id="addressInfo" class="form-group" style="display: none;">
+ <!-- Adresse -->
+ </div>
+ <div id="paymentInfo" class="form-group" style="display: none;">
+ <!-- Zahlungsinformationen -->
+ </div>
+ <button type="submit" id="nextButton" onclick="nextStep(event)">Weiter</button>
+ </form>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="scripts.js"></script>
+</body>
+</html>
+```
+
+CSS-Code (styles.css):
+
+```css
+.container {
+ max-width: 800px;
+ margin: auto;
+}
+
+form {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 20px;
+ align-items: center;
+ padding: 50px 0;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+.form-group {
+ display: none;
+}
+
+.active + .form-group, .active ~ .form-group {
+ display: initial;
+}
+
+.progress-bar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 30px;
+ border-bottom: 1px solid #ccc;
+}
+
+.step {
+ width: calc(33.33% - 20px);
+ height: 20px;
+ background-color: #ddd;
+ border-radius: 4px;
+ line-height: 20px;
+ text-align: center;
+ box-sizing: border-box;
+ cursor: pointer;
+}
+
+.active {
+ background-color: #4CAF50;
+ color: white;
+}
+```
+
+JavaScript-Code (scripts.js):
+
+```javascript
+let currentStep = 1;
+let formGroups = document.querySelectorAll('.form-group');
+
+function nextStep(event) {
+ event.preventDefault();
+
+ let isValid = true;
+ let inputs = document.querySelectorAll(`#step${currentStep} input[required]`);
+
+ for (const input of inputs) {
+ if (!input.checkValidity()) {
+ isValid = false;
+ break;
+ }
+ }
+
+ if (isValid) {
+ currentStep++;
+ document.getElementById('nextButton').innerText = 'Weiter';
+ hidePrevSteps();
+ showNextSteps();
+ }
+}
+
+function showNextSteps() {
+ for (let i = currentStep + 1; i <= formGroups.length; i++) {
+ formGroups[i - 1].style.display = "initial";
+ }
+}
+
+function hidePrevSteps() {
+ for (let i = 0; i < currentStep; i++) {
+ formGroups[i].style.display = "none";
+ }
+}
+```
+
+Dieses Beispiel zeigt ein mehrstufiges Formular mit einer Fortschrittsanzeige, das nacheinander persönliche Daten, Adresse und Zahlungsinformationen abfragt. Der Code ist flexibel und kann auf die Anforderungen Ihres Projekts angepasst werden.
+

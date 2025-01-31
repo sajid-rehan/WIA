@@ -1,0 +1,4 @@
+
+* [Externe Inhalte zu Ihrer Website hinzufügen](add-external-content.md) – Hier erfahren Sie mehr über die Verwendung von Webparts zum Anzeigen externer Inhalte in SharePoint Online.
+
+

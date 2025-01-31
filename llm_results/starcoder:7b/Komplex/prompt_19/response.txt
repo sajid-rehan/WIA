@@ -1,0 +1,122 @@
+
+ms.date: 02/15/2019
+ms.topic: how-to
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- progress controls [Windows Forms], walkthroughs
+- Walkthrough: Using the ProgressBar Control
+ms.assetid: dc8dd7e6-d45f-421b-8069-d3c4de3622bc
+author: jillre
+ms.author: jillfra
+manager: jillfra
+ms.openlocfilehash: 8811f884a7b667bd57a2cf2fb8079e0164c1e437
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69665623"
+---
+# <a name="how-to-create-a-more-complex-data-entry-form-with-the-windows-forms-progressbar-control"></a>Vorgehensweise: Erstellen eines komplexeren Dateneingabeformulars mit dem ProgressBar-Steuerelement
+
+Mit dem <xref:System.Windows.Forms.ProgressBar>-Steuerelement können Sie ein Formular erstellen, das nacheinander persönliche Daten, Adresse und Zahlungsinformationen abfragt. In diesem Beispiel wird der Prozess visuell dargestellt, indem im Hintergrund eine Kopie einer Fotografie angezeigt wird und die Anzahl der abgeschlossenen Schritte als Fortschritt angezeigt wird (bis zu fünf).
+
+## <a name="create-the-form"></a>Erstellen des Formulars
+
+1. Öffnen Sie im Menü **Projekt** die Option **Neues Element hinzufügen**, und fügen Sie ein Windows Forms-Anwendungsprojekt namens `ProgressBarTest`hinzu.
+
+2. Ziehen Sie eine <xref:System.Windows.Forms.PictureBox>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 500 x 375 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 10, 10 fest.
+
+3. Ziehen Sie eine <xref:System.Windows.Forms.CheckBox>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** den Wert der <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 10, 570 fest.
+
+4. Ziehen Sie eine <xref:System.Windows.Forms.Label>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 268 x 130 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 510, 10 fest.
+
+5. Ziehen Sie eine <xref:System.Windows.Forms.ProgressBar>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 268 x 30 Pixel und legen Sie dessen <xref:System.Windows.Forms.ProgressBar.Location%2A>-Eigenschaftensatz auf 510, 570 fest.
+
+6. Ziehen Sie eine <xref:System.Windows.Forms.Button>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 75, 20 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 10, 638 fest.
+
+7. Ziehen Sie eine weitere <xref:System.Windows.Forms.Button>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 75, 20 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 113, 638 fest.
+
+8. Ziehen Sie eine weitere <xref:System.Windows.Forms.Button>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 75, 20 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 226, 638 fest.
+
+9. Ziehen Sie eine weitere <xref:System.Windows.Forms.Button>-Steuerelement aus dem **Toolbox** auf das Formular. Ändern Sie im Fenster **Eigenschaften** die Größe des Steuerelements in 75, 20 Pixel und legen Sie dessen <xref:System.Windows.Forms.Control.Location%2A>-Eigenschaftensatz auf 339, 638 fest.
+
+10. Wählen Sie im Fenster **Eigenschaften** die Schaltfläche mit den Auslassungspunkten (![Vorschau der Ellipse-Schaltfläche](./media/visual-studio-ellipsis-button.png)) für das <xref:System.Windows.Forms.Button>-Steuerelement aus, und wählen Sie dann die Schaltfläche **Click** aus dem Dropdownmenü aus.
+
+11. Doppelklicken Sie im Editor auf den Ereignishandler `button1_Click`, um eine neue Formularcodedatei zu erstellen.
+
+## <a name="add-the-required-data"></a>Hinzufügen der erforderlichen Daten
+
+1. Fügen Sie dem Formular Code hinzu, und fügen Sie den folgenden Befehl zur <xref:System.Windows.Forms.Form>-Klasse hinzu:
+
+    ```vb
+    Private customerAddress, customerOrders As New DataSets.NorthwindDataSetTableAdapters.CustomersTableAdapter
+    Private orderDetails, orderTotal As New DataSets.NorthwindDataSetTableAdapters.OrderDetailsTableAdapter
+    'NOTE: The following column names correspond to the TableAdapters' Order Details
+    'form which is not visible in this example. They must be changed if you have
+    'changed the form's columns.
+    Private customerName As String = "CompanyName"
+    Private orderDate, shippedDate, shipperName, productName, unitPrice, unitsInStock As String
+    ```
+
+    ```csharp
+    private DataSets.NorthwindDataSetTableAdapters.CustomersTableAdapter customerAddress,
+        customerOrders as new DataSets.NorthwindDataSetTableAdapters.CustomersTableAdapter();
+    private DataSets.NorthwindDataSetTableAdapters.OrderDetailsTableAdapter orderDetails,
+        orderTotal as new DataSets.NorthwindDataSetTableAdapters.OrderDetailsTableAdapter();
+
+    //NOTE: The following column names correspond to the TableAdapters' Order Details
+    //form which is not visible in this example. They must be changed if you have
+    //changed the form's columns.
+    private string customerName = "CompanyName";
+    private string orderDate, shippedDate, shipperName, productName, unitPrice, unitsInStock;
+    ```
+
+2. Fügen Sie dem Formular Code hinzu, und fügen Sie den folgenden Befehl zum Ereignishandler für das <xref:System.Windows.Forms.Form.Load>-Ereignis der Schaltfläche `button1_Click` hinzu:
+
+    ```vb
+    ' Load the customers table by using a dataset with an open connection.
+    customerOrders.Fill(northwindDataSet.Customers)
+    // Bind the progress bar to the adapter.
+    progressBar1.DataSource = orderDetails
+    progressBar1.BindingContext = orderDetails.BindingContext
+    ```
+
+    ```csharp
+    //Load the customers table by using a dataset with an open connection.
+    customerOrders.Fill(northwindDataSet.Customers);
+    //Bind the progress bar to the adapter.
+    progressBar1.DataSource = orderDetails;
+    progressBar1.DataBindings.Add(progressBar1.BindingContext) =
+        orderDetails.BindingContext;
+    ```
+
+## <a name="implement-the-user-interface"></a>Implementieren der Benutzeroberflä76006,7
+0,6.63.0<7
+
+61
+
+(
+
+<6;23.1
+
+
+
+</6.
+
+**
+
+
+
+
+
+
+
+
+
+
+
+<
+
+

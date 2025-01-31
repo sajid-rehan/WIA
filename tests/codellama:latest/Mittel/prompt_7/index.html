@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meine Webseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <div class="grid-container">
+      <div class="grid-item"><img src="img1.jpg" alt=""></div>
+      <div class="grid-item"><img src="img2.jpg" alt=""></div>
+      <div class="grid-item"><img src="img3.jpg" alt=""></div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Meine Webseite</p>
+  </footer>
+  
+  <style>
+    /* grid-container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    /* grid-item */
+    .grid-item {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>

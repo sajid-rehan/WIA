@@ -1,0 +1,189 @@
+Here's a basic template for a portfolio website with a list of projects and a contact form:
+
+**HTML:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Portfolio</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<nav id="nav">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<section id="home">
+		<h1>Welcome to my portfolio!</h1>
+		<p>This is where I showcase my best work.</p>
+	</section>
+	
+	<section id="projects">
+		<h2>My Projects:</h2>
+		<ul>
+			<li>
+				<h3>Project 1: [Insert project name]</h3>
+				<p>[Insert brief description of the project]</p>
+				<img src="[Insert image URL]" alt="[Insert image alt text]">
+			</li>
+			<li>
+				<h3>Project 2: [Insert project name]</h3>
+				<p>[Insert brief description of the project]</p>
+				<img src="[Insert image URL]" alt="[Insert image alt text]">
+			</li>
+			<!-- Add more projects as needed -->
+		</ul>
+	</section>
+	
+	<section id="contact">
+		<h2>Get in touch:</h2>
+		<form action="" method="post" id="contact-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea>
+			
+			<button type="submit">Send</button>
+		</form>
+	</section>
+	
+	<script src="script.js"></script>
+</body>
+</html>
+```
+**CSS (in styles.css file):**
+```css
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#nav a:hover {
+	color: #ccc;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px;
+	margin-bottom: 50px;
+	border-bottom: 1px solid #ddd;
+}
+
+h2 {
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 20px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	margin: 20px 0;
+}
+
+#contact-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+	margin-bottom: 10px;
+}
+
+input, textarea {
+	width: 100%;
+	height: 30px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+```
+**JavaScript (in script.js file):**
+```javascript
+// Add event listener to contact form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+	event.preventDefault();
+	
+	// Get the form data
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+	var message = document.getElementById('message').value;
+	
+	// Send the form data to a server-side script (e.g. PHP)
+	fetch('/contact', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+		body: `name=${name}&email=${email}&message=${message}`,
+	})
+	.then(response => response.json())
+	.then(data => console.log(data))
+	.catch(error => console.error('Error:', error));
+});
+```
+This is just a basic template, and you'll need to customize it to fit your own needs. You can add more projects, change the design, and modify the contact form functionality as needed.
+
+Note that this template uses CSS for styling, HTML for structuring content, and JavaScript for dynamic behavior (in this case, handling the contact form submission).
+

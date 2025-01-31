@@ -1,0 +1,60 @@
+
+Hier ist ein Beispiel für eine Webseite mit einem Hauptmenü, einer Produktliste im Grid-Format und einem Kontaktformular:
+```html
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mein Shop</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="produkte">
+        <h2>Unsere Produkte</h2>
+        <div class="grid">
+          <div class="grid__item">
+            <img src="produkt1.jpg" alt="Produkt 1">
+            <p>Produkt 1</p>
+          </div>
+          <div class="grid__item">
+            <img src="produkt2.jpg" alt="Produkt 2">
+            <p>Produkt 2</p>
+          </div>
+          <!-- etc. -->
+        </div>
+      </section>
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <form action="#" method="post">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name"><br><br>
+          <label for="email">E-Mail:</label>
+          <input type="email" name="email" id="email"><br><br>
+          <label for="message">Nachricht:</label>
+          <textarea name="message" id="message"></textarea><br><br>
+          <input type="submit" value="Senden">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Mein Shop</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+Diese Webseite hat ein Hauptmenü mit zwei Menüpunkten, die auf die beiden Abschnitte "Produkte" und "Kontakt" verweisen. Der Inhalt der Webseite ist in den Abschnitten "Produkte" und "Kontakt" organisiert. Im Abschnitt "Produkte" wird eine Liste von Produkten in einem Grid-Format angezeigt, im Abschnitt "Kontakt" ist ein Kontaktformular enthalten, mit dem Benutzer ihre Informationen an uns senden können.
+
+Die CSS-Regeln sind in einer separaten Datei gespeichert und werden durch das Attribut `link` auf die Datei verwiesen. Die JavaScript-Skripte sind ebenfalls in einer separaten Datei gespeichert und werden durch das Attribut `script` auf die Datei verwiesen.
+
+Diese Webseite ist ein einfaches Beispiel für eine einfache HTML-Website mit einem Hauptmenü, einer Produktliste und einem Kontaktformular. Es gibt viele Möglichkeiten, diese Webseite zu erweitern und einzupassen, z.B. durch die Verwendung von JavaScript oder CSS zum Anpassen der Darstellung oder der Funktionen der Website.
+

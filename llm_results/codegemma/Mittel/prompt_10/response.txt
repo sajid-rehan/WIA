@@ -1,0 +1,39 @@
+```css
+.tab-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid #000;
+}
+```
+
+```html
+<div class="tab-navigation">
+  <div class="tab active">Übersicht</div>
+  <div class="tab">Details</div>
+  <div class="tab">Einstellungen</div>
+</div>
+```
+
+**CSS-Beschreibung:**
+
+* Die `tab-navigation`-Klasse definiert die Container für die Tab-Navigationsleiste.
+* Die `tab`-Klasse definiert die einzelnen Tabs.
+* Die `active`-Klasse wird auf den aktuellen Tab angewendet.
+* Die `justify-content: space-between;`-Eigenschaft stellt sicher, dass die Tabs gleichmäßig auf der Leiste verteilt werden.
+
+**HTML-Beschreibung:**
+
+* Die `div`-Elemente mit der Klasse `tab` repräsentieren die drei Tabs.
+* Der aktuelle Tab ist mit der Klasse `active` gekennzeichnet.
+

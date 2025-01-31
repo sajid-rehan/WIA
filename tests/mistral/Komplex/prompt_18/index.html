@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button aria-label="Hier klicken Sie auf ein Button">Button</button>
+    <input aria-label="Bitte geben Sie hier Ihren Namen ein" type="text">
+    <label for="name">Name:</label>
+    <input id="name" aria-label="Bitte geben Sie hier Ihren Namen ein" type="text">
+    <img src="image.jpg" alt="Bildbeschreibung">
+    <img aria-label="Bildbeschreibung" role="img" src="image.jpg">
+    <img src="image.jpg" role="img" aria-describedby="description">
+    <div id="description">Bildbeschreibung</div>
+    <ul role="tablist">
+        <li role="presentation">...</li>
+        <li role="tab" id="tab1" aria-controls="content1" aria-selected="true">...</li>
+        <li role="tab" id="tab2" aria-controls="content2">...</li>
+    </ul>
+    <div id="content1" role="tabpanel" aria-labelledby="tab1">...</div>
+    <div id="content2" role="tabpanel" aria-labelledby="tab2">...</div>
+    <video controls aria-label="Video mit Video-Beschreibung">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</body>
+
+</html>

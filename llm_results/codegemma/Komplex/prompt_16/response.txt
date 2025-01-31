@@ -1,0 +1,77 @@
+**Portfolio-Webseite**
+
+**Index.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <p>Welcome to my portfolio website. Here you can find a list of my projects and contact information.</p>
+</body>
+</html>
+```
+
+**Projects.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Projects</h1>
+    <ul>
+        <li><a href="#">Project 1</a></li>
+        <li><a href="#">Project 2</a></li>
+        <li><a href="#">Project 3</a></li>
+    </ul>
+</body>
+</html>
+```
+
+**Contact.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+</head>
+<body>
+    <h1>Contact</h1>
+    <form action="submit.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+```
+
+**Additional Files**
+
+Create additional HTML files for each project, containing information about the project and any relevant code snippets.
+
+**Notes:**
+
+* Replace `submit.php` with the actual PHP file for handling form submissions.
+* You can use CSS to style the website.
+* You can add more projects to the `projects.html` list.
+* You can change the contact form fields and submit destination as needed.
+

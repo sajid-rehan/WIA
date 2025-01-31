@@ -1,0 +1,94 @@
+ </p>
+
+<img src="assets/images/designmockup_01.png" width="450px"/>
+
+3) <h6>Titel</h6><br/>
+<p>Wähle eine Serifenschriftart für den Titel und setze einen Schriftschnitt mit voller Länge (Schriftgröße 28pt). </p>
+
+<img src="assets/images/designmockup_03.png" width="450px"/>
+
+4) <h6>Text und Farben</h6><br/>
+<p>Benutze Serifenschriftart in den Texten und verwende die Farbpalette der Wahl des Designers. Überlege bei fehlender Verwendung eines Schriftschnitt, ob das Design möglicherweise noch verbessert werden kann.</p>
+
+5) <h6>Links</h6><br/>
+<p>Verwende die Farben der Wahl des Designers für den Linktext und stelle sicher, dass er keine übermäßige Schriftfarbe aufweist. </p>
+
+6) <h6>Formular</h6><br/>
+<p>Füge einen runden Rahmen um die Felder ein. Dadurch wird der Benutzer leichter erkennen, dass die Formulare gefüllt sind und es lässt sich schneller handeln.</p>
+
+7) <h6>Schaltflächen</h6><br/>
+<p>Füge keine Rahmen um Schaltflächen ein. Diese führen zu Problemen, wenn die Felder falsch eingegeben werden oder auf den Pfeil geklickt wird.</p>
+
+8) <h6>Abbildungen</h6><br/>
+<p>Verwende eine Serifenschriftart für das Bild und vermeide die automatische Zoomstufe im Browser. Abbildungen sollten auf dem Screen klein genug sein, um zu verstehen bleiben.</p>
+
+9) <h6>Navigation</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+10) <h6>Buttons</h6><br/>
+<p>Stelle sicher, dass die Schaltflächen bei allen Aufgabentypen geeignet sind. Diese müssen daher einen klaren Zweck vermitteln und keine wichtigen Informationen verbergen.</p>
+
+11) <h6>Navigation</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+12) <h6>Berechtigungsbildung</h6><br/>
+<p>Stelle sicher, dass die Berechtigungsbildung in der Seite und auf allen weiteren Seiten enthalten ist. Diese sollte einen klaren und strukturierten Zweck vermitteln.</p>
+
+13) <h6>Seitenübersicht</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+14) <h6>Impressum</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+15) <h6>Kontakt</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+16) <h6>Footer</h6><br/>
+<p>Stelle sicher, dass die Footerseiten und der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+17) <h6>Kontakt</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+18) <h6>Login</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+19) <h6>Register</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+20) <h6>Passwort vergessen?</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+21) <h6>Passwort vergessen?</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+22) <h6>Beschaffung</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+23) <h6>Kontakt</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+24) <h6>Auswahlliste</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+25) <h6>Beschaffung</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+26) <h6>Hilfe</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+27) <h6>Beschaffung</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+28) <h6>Passwort vergessen?</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+29) <h6>Hilfe</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+30) <h6>Auswahlliste</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreichbar ist. Auf diesem sollte ein Menü mit den anderen Navigationen erscheinen.</p>
+
+31) <h6>Beschaffung</h6><br/>
+<p>Stelle sicher, dass der Pfad zum Hauptmenü nur durch das Logo erreich.der sich st s <. < undch ge s für in be < beit s der beagebeach be s auf</ in g on beier ge s an s be in ge inter be ge s auf ge ge to ver other l op le s as all se in best s for the default no op d to  to  to con s and in per    sp server on it s x in st and from in to put s in own pre out and to s test that user of to on on to in s in inter server st (</ s s next  in s s local as s, up for in in st re be to s in on be ge the s in server op in server  user at server other st s user on server it server in the you log and in b user one server in me in me st in all possible in user if user    from test in on s or s of user  local sp of user input on as user for to pass l in user    first user</ user in user ( data source o user on to be s in user on user it re be s on me and user on an s user per user op to put b  user op user op user op user op s user op user op user op s user op  user</ </ in user op user op user op user op user op  user op user op user ver m h o i p on the l to x n a s p user p user Ps user PDAMMD.P/ <NAME P1P9P5P0P0P0P0P0P0P0P0
+
+

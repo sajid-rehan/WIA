@@ -1,0 +1,40 @@
+ Um in einer Webseite eine Hover-Animation für Schaltflächen zu implementieren, bei der die Hintergrundfarbe langsam wechselt, können Sie CSS und JavaScript verwenden. Hier ist ein Beispiel mit dem HTML-Code einer Schaltfläche und dem CSS- und JavaScript-Code für die Animation:
+
+HTML-Code:
+```html
+<button id="myButton">Click me!</button>
+```
+
+CSS-Code (Styles.css):
+```css
+#myButton {
+  width: 200px;
+  height: 100px;
+  background-color: #ff6347;
+  color: white;
+  transition: background-color 0.5s ease-in-out;
+}
+```
+
+JavaScript-Code (Script.js):
+```javascript
+const myButton = document.getElementById('myButton');
+
+myButton.addEventListener('mouseover', function () {
+  this.style.backgroundColor = '#3498db';
+});
+
+myButton.addEventListener('mouseout', function () {
+  this.style.backgroundColor = '#ff6347';
+});
+```
+
+Verwenden Sie den HTML-Code für die Schaltfläche und fügen Sie dem CSS-Code Ihre eigenen Designoptionen wie Farben, Größe, Schriftart usw. hinzu. Fügen Sie dem JavaScript-Code die Adresse Ihrer Datei (styles.css und script.js) an, um sie in den Projektordner zu laden:
+
+```html
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+```
+

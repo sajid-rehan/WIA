@@ -1,0 +1,14 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meine Webseite</title>
+</head>
+<body>
+  <h1>Willkommen auf meiner Webseite!</h1>
+  <p>Dies ist meine erste Webseite. Hier finden Sie wichtige Informationen über mich und meine Projekte.</p>
+  <button>Weitere Informationen</button>
+</body>
+</html>
+```
+

@@ -1,0 +1,93 @@
+ Sie enthält auch die folgenden Komponenten:
+
+- Ein **Grid**, das 20 Zeilen und 40 Spalten hat. Jede Zelle zeigt eine einzelne Nummer an, beginnend mit 1 in der linken oberen Ecke des Rasters (1,1). Die Zellen werden automatisch ausgerichtet.
+- Ein **Schaltflächen**-Steuerelement mit drei Schaltflächen (**&lt;**, &gt;, &gt;&gt;), die ein Vielfaches der Spaltenanzahl entsprechen, wie in der folgenden Abbildung gezeigt:
+
+     ![Ein Schaltflächen-Steuerelement mit drei Schaltflächen.](./media/create-web-pages-and-controls/_static/image4.png)
+- Ein **Bearbeitungssteuerelement**, das eine Bearbeitungszone für Text enthält, wie in der folgenden Abbildung gezeigt:
+
+     ![Ein Bearbeitungssteuerelement, das ein Steuerelement zum Eingeben von Text enthält](./media/create-web-pages-and-controls/_static/image5.png)
+- Ein **Bearbeitungssteuerelement**, das eine Bearbeitungszone für HTML enthält:
+
+     ![Ein Bearbeitungssteuerelement, das ein Steuerelement zum Eingeben von HTML enthält](./media/create-web-pages-and-controls/_static/image6.png)
+- Ein **Bearbeitungssteuerelement**, das einen **CheckBoxList**enthält:
+
+     ![Ein Bearbeitungssteuerelement, das ein CheckBoxList-Steuerelement für mehrere Optionen enthält](./media/create-web-pages-and-controls/_static/image7.png)
+- Ein **Schaltflächen** -Steuerelement mit einer Schaltfläche (**Senden**), wie in der folgenden Abbildung gezeigt:
+
+     ![Ein Schaltflächen-Steuerelement mit einer Schaltfläche "senden".](./media/create-web-pages-and-controls/_static/image8.png)
+- Ein **Bearbeitungssteuerelement**, das ein Textfeld enthält, in dem die Daten des Benutzers gespeichert werden:
+
+     ![Ein Bearbeitungssteuerelement, das ein Textfeld für Benutzerdaten enthält](./media/create-web-pages-and-controls/_static/image9.png)
+- Ein **Bearbeitungssteuerelement**, das eine Zusammenfassung der Daten des Benutzers zeigt:
+
+     ![Ein Bearbeitungssteuerelement, das die Benutzerdaten zusammenfasst](./media/create-web-pages-and-controls/_static/image10.png)
+
+Diese Steuerelemente werden verwendet, um Daten in einem Raster zu platzieren und einen Benutzernamen einzugeben. Das **&lt;** -Steuerelement gibt die Zeilen auf der linken Seite des Rasters zurück (von 1 bis 9), das **>**-Steuer
+
+### <a name="linking-the-control-library-to-a-page"></a>Verknüpfen der Steuerelementbibliothek mit einer Seite
+
+1. Erstellen Sie in Visual Studio ein neues Web Pages-Projekt, und wählen Sie dann die **Datei** > **neue Website**aus.
+2. Klicken Sie im linken Bereich auf **Webseite**.
+3. Geben Sie der Webseite den Namen *TestGrid. cshtml* , und klicken Sie dann auf die Schaltfläche **OK** .
+
+    ![Eine neue Webseite erstellen](create-web-pages-and-controls/_static/image11.png)
+4. Ersetzen Sie das vorhandene &lt;H1&gt;-Element durch den Text `Testing Grids`.
+
+    [!code-html[Main](create-web-pages-and-controls/samples/sample20.html)]
+5. Fügen Sie am Ende der Seite die folgenden HTML-Markup hinzu, um das Raster zu erstellen:
+
+    [!code-aspx[Main](create-web-pages-and-controls/samples/sample21.aspx)]
+6. Drücken Sie **F5**, um die Anwendung auszuführen und sie im Browser anzuzeigen. Das Grid-Steuerelement, das Sie erstellt haben, zeigt 10 Zeilen und 4 Spalten an:
+
+    ![Das Grid-Steuerelement mit 20 Zeilen und 4 Spalten](./media/create-web-pages-and-controls/_static/image12.png)
+7. Bei Bedarf können Sie die Anwendung durch Klicken auf das Symbol **Code** anzeigen und den HTML-Code anzeigen, der die Seite erstellt hat. Wenn Sie diese Elemente als Teil des Lernens verwenden möchten, klicken Sie auf **View Source** (Quelle anzeigen).
+
+    ![Anzeige des Quellcodes](create-web-pages-and-controls/_static/image13.png)
+
+## <a name="adding-html-controls-to-the-page"></a>Hinzufügen von HTML-Steuerelementen zur Seite
+
+1. Fügen Sie die folgende Zeile hinzu, um den Benutzerdatenspeicher zu initialisieren:
+
+    [!code-csharp[Main](create-web-pages-and-controls/samples/sample22.cs)]
+2. Löschen Sie die vorhandene &lt;!-H-&gt;-Tags am Anfang der Seite und fügen Sie dann das folgende Skript hinzu:
+
+    [!code-html[Main](create-web-pages-and-controls/samples/sample23.html)]
+3. Fügen Sie die folgenden Zeilen in den &lt;Formular&gt;-Abschnitt ein, um den Benutzer anzufordern und die Daten anzuzeigen:
+
+    [!code-html[Main](create-web-pages-and-controls/samples/sample24.html)]
+4. Fügen Sie nach dem letzten &lt;/Formular&gt;-Tag das folgende Skript hinzu, um den Benutzer zu speichern und die Daten anzuzeigen:
+
+    [!code-javascript[Main](create-web-pages-and-controls/samples/sample25.js)]
+5. Drücken Sie **F5**, um die Anwendung auszuführen und sie im Browser anzuzeigen. Geben Sie einen Benutzernamen in das Textfeld ein, und klicken Sie dann auf die Schaltfläche "senden". Der Benutzername wird angezeigt.
+
+    ![Die Seite mit einem Grid-Steuerelement, das 10 Zeilen und 4 Spalten anzeigt.](create-web-pages-and-controls/_static/image14.png)
+6. Geben Sie einen anderen Benutzernamen ein, und klicken Sie dann auf **senden**. Der neue Benutzername wird angezeigt:
+
+    ![Die Seite mit einem Grid-Steuerelement, das 20 Zeilen und 4 Spalten anzeigt.](create-web-pages-and-controls/_static/image15.png)
+7. Klicken Sie auf **View Source** (Quelle anzeigen).
+8. Beachten Sie den folgenden Codeblock:
+
+    [!code-csharp[Main](create-web-pages-and-controls/samples/sample26.cs)]
+
+   > [!NOTE]
+   > Der obige Code verwendet die `Request` und `Response` Objekte, um die Informationen vom Browser an ASP.net weiterzuleiten.
+9. Klicken Sie auf **View Source** (Quelle anzeigen), und beachten Sie den folgenden zweiten Codeblock:
+
+    [!code-csharp[Main](create-web-pages-and-controls/samples/sample27.cs)]
+
+   > [!NOTE]
+   > Der obige Code zeigt, wie die Daten des Benutzers gespeichert werden und in einem Raster angezeigt werden sollen.
+10. Klicken Sie auf **View Source** (Quelle anzeigen), um die Seite zu schließen.
+
+## <a name="creating-a-control-library"></a>Erstellen einer Steuerelementbibliothek
+
+1. Erstellen Sie in Visual Studio ein neues Web Pages-Projekt, und wählen Sie dann **Datei** > **neue Website**aus.
+2. Klicken Sie im linken Bereich auf **Webseite**.
+3. Geben Sie der Webseite den Namen *TestGrid. cshtml* , und klicken Sie dann auf die Schaltfläche **OK** .
+
+    ![Eine neue Webseite erstellen](create-web-pages-and-controls:0241,106853/c723-.19.
+
+Test.
+12129.212.221/012.028022/250020000000000020000000000000000000000000000000
+

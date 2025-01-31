@@ -1,0 +1,55 @@
+**HTML-Code:**
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Barrierefreie Webseite mit ARIA-Labels</title>
+</head>
+<body>
+  <h1>Willkommen auf meiner Webseite!</h1>
+
+  <nav aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="#">Startseite</a></li>
+      <li><a href="#">Über mich</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article aria-label="Hauptartikel">
+      <h2>Unser Service</h2>
+      <p>Unser Service bietet Ihnen eine breite Palette an Lösungen für Ihre individuellen Bedürfnisse.</p>
+    </article>
+
+    <form aria-label="Kontaktformular">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" required>
+
+      <button type="submit" aria-label="Absenden">Senden</button>
+    </form>
+  </main>
+</body>
+</html>
+```
+
+**Beschreibung:**
+
+* **ARIA-Label:** `aria-label`-Attribut wird für alle interaktiven Elemente verwendet, um eine klare und präzise Beschreibung des Elementes zu liefern.
+* **Navigation:** `nav`-Element mit `aria-label="Hauptnavigation"` für die Navigationsleiste.
+* **Hauptartikel:** `article`-Element mit `aria-label="Hauptartikel"` für den Hauptartikel auf der Seite.
+* **Kontaktformular:** `form`-Element mit `aria-label="Kontaktformular"` für das Kontaktformular.
+* **Feldetiketten:** `label`-Elemente mit `for`-Attributen für die Feldetiketten im Formular.
+* **Absenden-Knopf:** `button`-Element mit `type="submit"` und `aria-label="Absenden"` für den Absenden-Knopf.
+
+**Vorteile:**
+
+* **Barrierefreiheit:** Alle interaktiven Elemente sind barrierefrei zugänglich.
+* **Benutzerfreundlichkeit:** Die ARIA-Labels verbessern die Benutzerfreundlichkeit der Website für Menschen mit Behinderung.
+* **Suchmaschinenoptimierung:** Die Verwendung von ARIA-Labels fördert die Suchmaschinenoptimierung (SEO).
+

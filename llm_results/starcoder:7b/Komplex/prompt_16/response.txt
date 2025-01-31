@@ -1,0 +1,145 @@
+ Die Seite soll einen großen Touchscreen umfassen, der in einem Mobiltelefon gezeigt wird."
+weight = 40
++++
+
+## Lektion 1: Erstelle das Layout des Portfolio-Projekts und verbinde die einzelnen Dateien miteinander {#section1}
+
+[Lade dir eine ZIP-Datei mit den gesammelten Projekt-Dateien herunter](https://storage.googleapis.com/download.tensorflow.org/data/full_course/week4/portfolio_files.zip) und entpacke diese in dein lokales Dateisystem oder öffne die ZIP-Datei.
+
+{{% card %}}
+### Portfolio-Layout erstellen
+
+1. Füge das Bild `images/cat.jpg` ein, um es dem Portfolio-Projekt hinzuzufügen.
+
+    - Klicke mit der linken Maustaste auf den Ordner `images`, und wähle **Neu > Datei** aus.
+    - Wähle im oberen Dropdownmenü die Option **Allgemein > Bild**.
+    - Gib `cat` in das Feld für den Dateinamen ein, um einen Namen zu geben, der als Kurzname verwendet werden kann (wird unterhalb des Formulars angezeigt).
+    - Wähle im rechten Dropdownmenü die Option **Andere Bildtypen** aus.
+    - Füge das Bild `images/flower.jpg` dem Portfolio hinzu, und gib dabei einen Namen ein (wird unterhalb des Formulars angezeigt).
+
+2. Erstelle das Layout für das Portfolio-Projekt in der Datei `portfolio.html`.
+3. Füge die Bilder `images/cat.jpg` und `images/flower.jpg` dem Layout hinzu, so dass ein Bild pro Projekt angezeigt wird (der Text `Cat` bzw. `Flower`).
+
+    - Platziere zuerst das Bild `cat`.
+    - Dann platziere das Bild `flower`, und lege einen Rand von 20 Pixel auf beiden Seiten fest, um zu verhindern, dass die einzelnen Bilder sich überlappen.
+
+4. Füge den HTML-Code für das Portfolio-Projekt hinzu:
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <!-- Import the webpage's stylesheet -->
+
+      <head>
+        <link rel="stylesheet" href="/portfolio_files/style.css">
+
+        <!-- Import the webpage's JavaScript file -->
+        <script src="/portfolio_files/script.js"></script>
+      </head>
+
+      <!-- Define where to place the content in the body of the HTML page -->
+      <body>
+        <header class="heading-element">
+          <h1><NAME></h1>
+
+          <!-- Create a navigation bar with three links:
+           - One for each project, which opens the corresponding project
+           - A link to contact form
+         -->
+
+        </header>
+
+
+        <div id="projects" class="grid-layout">
+        <!-- Place each image in its own grid -->
+          <section class="image-element">
+            <img src="/images/cat.jpg"/>
+
+            <!-- Create a heading for the project
+             - Give it a unique ID and add an empty div to hold the text
+           -->
+
+          </section>
+        </div>
+
+
+        <footer class="heading-element">
+
+        <!-- Create a container to hold the contact form
+         - Add a heading
+       -->
+
+         </footer>
+      </body>
+    </html>
+
+    ```
+
+5. Füge das Bild `images/cat.jpg` dem Portfolio hinzu, und gib dabei einen Namen ein (wird unterhalb des Formulars angezeigt).
+6. Erstelle eine HTML-Seite mit der Erweiterung `.html`, die das Layout für das Projekt enthält: `portfolio.html`. Füge den folgenden Code hinzu, um das Portfolio-Projekt zu implementieren und einzelne Bilder in das Kartenlayout einzubinden:
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <!-- Import the webpage's stylesheet -->
+
+      <head>
+        <link rel="stylesheet" href="/portfolio_files/style.css">
+
+        <!-- Import the webpage's JavaScript file -->
+        <script src="/portfolio_files/script.js"></script>
+      </head>
+
+      <!-- Define where to place the content in the body of the HTML page -->
+      <body>
+        <header class="heading-element">
+          <h1><NAME></h1>
+
+          <!-- Create a navigation bar with three links:
+           - One for each project, which opens the corresponding project
+           - A link to contact form
+         -->
+
+        </header>
+
+
+        <div id="projects" class="grid-layout">
+        <!-- Place each image in its own grid -->
+          <section class="image-element">
+            <img src="/images/cat.jpg"/>
+
+            <!-- Create a heading for the project
+             - Give it a unique ID and add an empty div to hold the text
+           -->
+
+          </section>
+
+
+          <section class="image-element">
+            <img src="/images/flower.jpg" />
+
+            <!-- Create a heading for the project
+             - Give it a unique ID and add an empty div to hold the text
+           -->
+
+          </section>
+        </div>
+
+
+        <footer class="heading-element">
+
+        <!-- Create a container to hold the contact form
+         - Add a heading
+       -->
+
+         </footer>
+      </body>
+    </html>
+
+    ```
+
+Nun sollte die Seite wie folgt aussehen:
+![Portfolio mit zwei Bildern](images/two_images.png)
+{{% /card %}}
+
+

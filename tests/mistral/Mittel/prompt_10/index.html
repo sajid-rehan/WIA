@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tabbed Navigation</title>
+    <!-- Styles und Skripte einbinden -->
+    <style>
+        /* Basic Tabbed Navigation */
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab {
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .tab.tab-active {
+            background-color: #ccc;
+        }
+
+        /* Hidden Content */
+
+        .tab-content {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #eee;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-container">
+        <button class="tab tab-active" onclick="openCity(event, 'overview')">Übersicht</button>
+        <button class="tab" onclick="openCity(event, 'details')">Details</button>
+        <button class="tab" onclick="openCity(event, 'settings')">Einstellungen</button>
+    </div>
+
+    <div id="overview" class="tab-content tab-hide">Übersichtstext hier</div>
+    <div id="details" class="tab-content tab-hide">Detailstext hier</div>
+    <div id="settings" class="tab-content tab-hide">Einstellungstext hier</div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.add("tab-hide");
+            }
+
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("tab-active");
+            }
+
+            document.getElementById(cityName).classList.remove("tab-hide");
+            evt.currentTarget.classList.add("tab-active");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+
+SEO-Tags sind die Basis, um die Suchmaschinen zu optimieren und auf der Google-Suche einzusteigen.
+
+### SEO-Grundlagen
+* [Meta-Tags](https://de.wikipedia.org/wiki/Metatag) - Tags zur Angabe von Inhalten für Suchmaschinen
+* [SEO (Search Engine Optimization)](https://de.wikipedia.org/wiki/Suchmaschinencodehlerkennung) - Optimierung des Angebotes auf den Google-Suchmaschinen 
+* [W3C Schnellstart - SEO](https://www.w3c.de/DE/seo-schnellstart/index.html) - W3C-Webseite zur besseren Übersicht und Implementierung der einzelnen Themen
+
+### Google Webmaster Tools
+* [Google Webmastertools](https://www.google.com/webmasters/) 
+* [Google Webmaster Tools – SEO – Tutorials](http://de.tutsplus.com/tutorials/search-engine-optimization-seo-tutorial-for-beginners--cms-23085) - Tutorial mit Übersicht und Schritten zu Implementierung von Google-Webmaster Tools
+* [SEO & Analytics](https://support.google.com/analytics/answer/174694?hl=de#search) - Hilfestellung beim Anlegen der Suchmaschinenberater (SEOs) in Google WebmasterTools
+
+

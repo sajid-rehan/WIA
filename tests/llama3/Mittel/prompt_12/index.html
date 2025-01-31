@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Blog</title>
+    <style>
+        /* Add some basic styling to make it look nice */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .blog-posts {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-post {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .search-input {
+            width: 50%;
+            height: 20px;
+            font-size: 16px;
+            padding: 5px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>My Blog</h1>
+    </header>
+
+    <!-- List of blog posts -->
+    <ul class="blog-posts">
+        {% for post in posts %}
+        <li class="blog-post">
+            {{ post.title }} ({{ post.date }})
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Search function -->
+    <form>
+        <input type="search" id="search-input" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Script to handle search functionality (you can add this later) -->
+    <script>
+        // Add JavaScript code here to handle the search functionality
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tab Navigation Example</title>
+  <style>
+    /* Style for the tab navigation */
+    .tab-navigation {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    
+    /* Style for the tab links */
+    .tab-link {
+      color: #444;
+      text-decoration: none;
+      margin-right: 20px;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 10px;
+    }
+    
+    /* Style for the active tab link */
+    .tab-link.active {
+      color: #444;
+      text-decoration: none;
+      margin-right: 20px;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+    }
+    
+    /* Style for the tab content */
+    .tab-content {
+      display: none;
+    }
+    
+    /* Style for the active tab content */
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab-navigation">
+    <a href="#" class="tab-link active" data-target="#tab1">Übersicht</a>
+    <a href="#" class="tab-link" data-target="#tab2">Details</a>
+    <a href="#" class="tab-link" data-target="#tab3">Einstellungen</a>
+  </div>
+  
+  <!-- Tab content for the first tab -->
+  <div id="tab1" class="tab-content active">
+    <p>Inhalt des ersten Tabs.</p>
+  </div>
+  
+  <!-- Tab content for the second tab -->
+  <div id="tab2" class="tab-content">
+    <p>Inhalt des zweiten Tabs.</p>
+  </div>
+  
+  <!-- Tab content for the third tab -->
+  <div id="tab3" class="tab-content">
+    <p>Inhalt des dritten Tabs.</p>
+  </div>
+</body>
+</html>

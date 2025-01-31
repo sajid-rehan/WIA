@@ -1,0 +1,57 @@
+ Die Menüleiste enthält die Bezeichnungen *Home*, *Product List* und *Contact*. Die Produktliste enthält eine Liste der Produkte aus einer **DataSource** mit dem Namen `productsDs`. Diese Datasource wurde automatisch hinzugefügt, weil Sie sie in Schritt 1 angegeben haben.
+
+Zum Erstellen dieses Formulars müssen Sie zwei **WebForm**-Steuerelemente erstellen: ein Menü und eine Kontaktformular.
+
+1. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie **Hinzufügen > Neues Element** aus.
+2. Wählen Sie in den angezeigten Dialogfeldern die Option **Web Forms-Steuerelemente** im linken Bereich unter **Visual C#-Elemente**, und klicken Sie anschließend auf **Formular**. Geben Sie dem Formular den Namen `Default.aspx`, und wählen Sie **OK** aus.
+3. Doppelklicken Sie in der Projektmappenansicht auf die Datei `Default.aspx` im Ordner *Eigenschaften*. Wählen Sie als Nächstes das **Formular**-Steuerelement aus, klicken Sie mit der rechten Maustaste darauf und wählen Sie **Hinzufügen > neues Steuerelement** aus.
+4. Klicken Sie in den angezeigten Dialogfeldern die Option **Web Form Controls** im linken Bereich unter **Visual C#-Elemente**, klicken Sie dann auf **Menü**, und klicken Sie anschließend auf **Menü**. Geben Sie dem Menü Steuerelement den Namen `Menu1` und wählen Sie **OK** aus.
+5. Fügen Sie als Nächstes das **Formular**-Steuerelement als neues untergeordnetes Element des Menüsteuerelements hinzu. Klicken Sie mit der rechten Maustaste auf den Menüsteuerelement, und wählen Sie dann **Hinzufügen > neues Steuerelement**.
+6. Wählen Sie in den angezeigten Dialogfeldern die Option **Web Form Controls** im linken Bereich unter **Visual C#-Elemente**, klicken Sie dann auf **Formular mit einem Master-Detailmuster**, und wählen Sie anschließend **Kontaktformular**. Geben Sie dem Formular Steuerelement den Namen `Contact1` und wählen Sie **OK** aus.
+7. Klicken Sie in der Projektmappenansicht auf das Menüsteuerelement, um die Datei `Menu1.ascx.cs` zu öffnen.
+
+    ![Projektsicht mit ausgewähltem Formular](using-the-dropdownlist-and-other-html-controls-vb/_static/image26.png)
+
+    **Abbildung 9**: Projektmappenansicht, in der das Menüsteuerelement ausgewählt ist
+8. Entfernen Sie den Text, der über die `ID`-Eigenschaft verfügt, und fügen Sie eine `Title` Eigenschaft mit dem Wert *Menü* hinzu.
+9. Fügen Sie einen neuen Datentyp für die Dropdownliste hinzu. Klicken Sie mit der rechten Maustaste auf den Menüsteuerelement, wählen Sie **Hinzufügen > neues Element** aus, und suchen Sie nach dem **DropDownList-Steuerelement**. Geben Sie diesem Steuerelement das `ID` DropDownList1, als Typ.
+10. Klicken Sie in der Designeransicht auf den Menüsteuerelement, um es zu öffnen. Ziehen Sie dann im Fenster "Eigenschaften" aus dem Abschnitt GridView-Steuerelement eine `ProductsDataSource`-Eigenschaft des Typs "ObjectDataSource" an das `DropDownList1` -Steuerelement.
+11. Klicken Sie in den Dropdownlisten-Dialogfeldern, die angezeigt werden sollen, klicken Sie auf **Konfigurieren von Datenquelle**. Geben Sie im daraufhin angezeigten Dialogfeld die *ProductsBLL*-Klasse als Klasse an, und wählen Sie dann die `GetProductsByCategoryID(categoryID)` -Methode aus der Dropdown Liste. Schließen Sie anschließend das Dialogfeld **Configure Data Source**.
+12. Binden Sie den Wert für DropDownList s `Text` Eigenschaft an die `ProductName`-Eigenschaft, und legen Sie dann deren `DataTextField` auf den Wert *Product Name*fest.
+13. Wählen Sie das Menüsteuerelement aus, um es zu öffnen. Ziehen Sie dann im Fenster "Eigenschaften" aus dem Abschnitt GridView-Steuerelement eine `CategoriesDataSource`-Eigenschaft des Typs "ObjectDataSource" an das DropDownList1 -Steuerelement.
+14. Klicken Sie in den Dropdownlisten-Dialogfeldern, die angezeigt werden sollen, klicken Sie auf **Konfigurieren von Datenquelle**. Geben Sie im daraufhin angezeigten Dialogfeld als Klasse *CategoriesBLL* an, und wählen Sie dann die `GetCategories()` -Methode aus der Dropdown Liste. Schließen Sie anschließend das Dialogfeld **Configure Data Source**.
+15. Binden Sie den Wert für DropDownList s `Text` Eigenschaft an die `CategoryName`-Eigenschaft, und legen Sie dann deren `DataTextField` auf den Wert *Category Name*fest.
+
+    ![Binden des Textfelds "Kategorie" an die Kategories-Dropdown Liste](using-the-dropdownlist-and-other-html-controls-vb/_static/image27.png)
+
+    **Abbildung 10**: Binden des Textfelds *Kategorie* an das Dropdownlisten-Steuerelement *Categories*
+16. Wählen Sie die Dropdownliste und dann den Menüsteuerelement aus, um sie zu öffnen. Legen Sie in der Eigenschaftenfenster s `AutoPostBack` auf *false*fest, damit beim Klicken eine Auswahl in der Dropdown Liste nicht zur gleichen Seite weitergeleitet wird.
+17. Öffnen Sie die Datei "Contact.aspx" im Ordner *Eigenschaften*. Fügen Sie das Formular Steuerelement wie zuvor hinzu, und binden Sie das `DataSourceID`-Attribut an eine neue ObjectDataSource namens `ContactDataSource`. Legen Sie als Nächstes die Dropdownlisten-Methode auf die `GetCategories()` -Methode fest.
+
+    ![Konfigurieren von Datenquellen für das Kontaktformular](using-the-dropdownlist-and-other-html-controls-vb/_static/image28.png)
+
+    **Abbildung 11**: Konfigurieren der Datenquelle für das Kontaktformular
+
+> [!NOTE]
+> In Schritt 9 wurde angegeben, dass das DropDownList-Steuerelement `AutoPostBack` auf *false*festgelegt wird. Dies ist erforderlich, wenn Sie die Dropdownliste in der GridView verwenden möchten. Wenn jedoch die Dropdownliste nur als Menü verwendet werden soll und keine Kontaktinformationen angezeigt werden müssen, können Sie diese Einstellung entfernen oder auf *true*festlegen.
+
+## <a name="binding-the-list-of-categories-to-the-dropdownlists-data-source"></a>Binden der Liste der Kategorien an die Dropdown Listen Datenquelle
+
+Beim Binden von Daten an das DropDownList-Steuerelement werden standardmäßig alle verfügbaren Datenelemente aus der Datenquelle abgerufen. In diesem Fall hat die Dropdown Liste sowohl Produkt Kategorien als auch Produkte angezeigt, da `CategoriesDataSource` ein Objekt zurückgibt, das sowohl eine Auflistung von Produkt Kategorien als auch eine Auflistung von Produkten enthält. Beim Binden der Daten an den DropDownList-Wert müssen Sie die Liste aller verfügbaren Optionen angeben, und es ist nicht praktikabel, das Feld "Kategorie" des Kontaktformulars aus den Kategorien auszuwählen.
+
+Um diese Einschränkung zu umgehen, müssen Sie nur die Produkt Kategorien als Optionsfelder auf der Dropdown Liste angeben und keine Produkte angeben. Dies kann erreicht werden, indem `ListItem` s `Enabled`-Eigenschaften wie folgt auf *false*festgelegt wird:
+
+[!code-aspx[Main](using-the-dropdownlist-and-other-html-controls-vb/samples/sample3.aspx)]
+
+Diese Änderung ermöglicht es dem Benutzer, die Dropdown Liste auszuwählen und die * erri in a( auf in le in to
+ für in aus. < auf ge the to4001 920600000800000000
+305
+
+
+
+
+
+
+
+
+

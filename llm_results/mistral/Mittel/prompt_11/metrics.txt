@@ -1,0 +1,8 @@
+total_duration: 41.17573675s
+load_duration: 8.10825ms
+prompt_eval_count: 36
+prompt_eval_duration: 312ms
+prompt_eval_rate: 115.38
+eval_count: 36
+eval_duration: 312ms
+eval_rate: 115.38

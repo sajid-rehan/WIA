@@ -1,0 +1,40 @@
+```
+**Dashboard**
+
+**1. Kreisdiagramm**
+
+* Titel: Geschlechtsverteilung
+* Datenquelle: Datenbank
+* Beschreibung: Zeigt die Anzahl der Personen nach Geschlecht an.
+
+**2. Balkendiagramm**
+
+* Titel: Berufliche Herkunft
+* Datenquelle: Datenbank
+* Beschreibung: Zeigt die Anzahl der Personen nach professionellen Kategorien an.
+
+**3. Bereich für Statistiken**
+
+* Titel: Überblick über die Daten
+* Beschreibung: Zeigt wichtige Statistiken wie Gesamtanzahl der Personen, durchschnittliches Alter, etc. an.
+
+**Datenquellen:**
+
+* Datenbank
+
+**Benutzerinteraktion:**
+
+* Benutzer kann Filter anwenden, um das Dashboard nach bestimmten Kriterien zu sortieren.
+
+**Design:**
+
+* Das Dashboard sollte ansprechende Grafiken verwenden.
+* Die Daten sollten leicht zu verstehen sein.
+* Das Design sollte professionell aussehen.
+
+**Funktionen:**
+
+* Das Dashboard sollte analytische Informationen bereitstellen.
+* Die Benutzer sollten die Lage der Daten besser verstehen können.
+* Das Dashboard sollte eine Salve für zukünftige Entscheidungen bieten.
+

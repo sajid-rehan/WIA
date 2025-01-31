@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        nav {
+            float: right;
+            margin-top: -10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .search-input {
+            width: 250px;
+            height: 30px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            width: 40px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-result {
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">Search</button>
+    </div>
+    <section class="blog-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            <!-- Blog posts will be displayed here -->
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // Search function
+        $(document).ready(function () {
+            $('.search-button').click(function () {
+                var searchQuery = $('.search-input').val();
+                $.ajax({
+                    url: 'https://api.github.com/search/repositories',
+                    data: { q: searchQuery },
+                    success: function (data) {
+                        console.log(data);
+                        // Display search results here
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

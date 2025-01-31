@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Für diese Animation gibt es mehrere CSS-Eigenschaften: `color` (für die Farbe), `background-color` (für den
+    Hintergrund) und `transition` (für die Transition). Mit einem Doppelpunkt (:) kannst du eine Eigenschaft festlegen.
+    Wenn du also nur eine der drei festlegst, wird der anderen Wert automatisch auf das Standardwert gesetzt, welches du
+    mit `initial` bestimmt hast.</p>
+    <pre><code class="lang-html">button {
+      color: red; /* Farbe */
+      background-color: blue;  /* Hintergrundfarbe */
+    
+      transition: background-color .5s ease-out; /* Übergang für die Hintergrundfarbe */
+    }</code></pre>
+    <p>Die Eigenschaft <code>transition</code> besteht aus drei Teilen, nämlich der Farbwert (in diesem Fall
+        <code>background-color</code>), dem Zeitraum des Übergangs (<code>.5s</code>) und der Animationstyp
+        (<code>ease-out</code>). Die beiden letzten Eigenschaften stehen für die Animationsvariante, bei der die
+        Hintergrundfarbe langsam wechselt. Du hast drei Möglichkeiten: <code>linear</code>, <code>ease</code> und
+        <code>ease-out</code>.
+    </p>
+    <pre><code class="lang-css">transition: background-color .5s ease; /* linear */
+    transition: background-color .5s ease-out; /* Ease oder ease out */</code></pre>
+    <h2 id="weitere-css-eigenschaften">Weitere CSS-Eigenschaften</h2>
+    <p><img src="/files/cms/animationen-2.gif" alt=""></p>
+    <p>In der folgenden Abbildung sehen wir zwei Animationen, bei denen ein Hintergrundbild von rechts nach links bewegt
+        wird (oder senkrecht, wenn du <code>-webkit</code> in deinem Browser nutzt).</p>
+    <pre><code class="lang-css">background: #ccc url(&quot;images/image-05.jpg&quot;) repeat-y 100% 25%; /* Startbild */
+    
+    animation: slide .7s linear infinite,   /* Animationsname */
+               shake 3s ease infinite alternate; /* Eingriffstyp */</code></pre>
+    <p>In der folgenden Abbildung wird eine Animation für Schaltflächen gezeigt. Die Hintergrundfarbe steht in den
+        CSS-Eigenschaften.</p>
+    <pre><code class="lang-html">&lt;button&gt;&lt;/button&gt;</code></pre>
+    <pre><code class="lang-css">background: #ccc url(&quot;images/image-05.jpg&quot;) repeat-y 100% 25%; /* Startbild */
+    
+    transition: background .7s ease,    /* Übergang für die Hintergrundfarbe */
+               color .3s linear,       /* Übergang für die Schriftfarbe */
+               opacity .4s;            /* Übergang für die Transparenz */</code></pre>
+    <h2 id="zusammenfassung">Zusammenfassung</h2>
+    <p>CSS Animationen sind gut geeignet, wenn du eine Website erst mit einem einfachen Hintergrundbild startest und
+        danach animierst. Die CSS-Eigenschaft <code>animation</code> ist die am häufigsten verwendete Methode.</p>
+    <pre><code class="lang-css">animation: name duration timing-function delay iteration-count direction fill-mode play-state;</code></pre>
+
+
+
+</body>
+
+</html>

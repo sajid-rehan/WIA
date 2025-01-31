@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fortschrittsanzeige</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		.step-container {
+			background-color: #f0f0f0;
+			padding: 20px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+		}
+		
+		.next-button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.next-button:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fortschrittsanzeige</h1>
+	
+	<!-- Erste Stufe: Persönliche Daten -->
+	<div class="step-container" id="step-1">
+		<form>
+			<label for="name">Vorname:</label>
+			<input type="text" id="name" name="name"><br><br>
+			<label for="surname">Nachname:</label>
+			<input type="text" id="surname" name="surname"><br><br>
+			<button class="next-button" type="button" onclick="nextStep(2)">Weiter</button>
+		</form>
+	</div>
+	
+	<!-- Zweite Stufe: Adresse -->
+	<div class="step-container" id="step-2" style="display:none;">
+		<form>
+			<label for="street">Straße:</label>
+			<input type="text" id="street" name="street"><br><br>
+			<label for="houseNumber">Hausnummer:</label>
+			<input type="text" id="houseNumber" name="houseNumber"><br><br>
+			<label for="city">Stadt:</label>
+			<input type="text" id="city" name="city"><br><br>
+			<button class="next-button" type="button" onclick="nextStep(3)">Weiter</button>
+		</form>
+	</div>
+	
+	<!-- Dritte Stufe: Zahlungsinformationen -->
+	<div class="step-container" id="step-3" style="display:none;">
+		<form>
+			<label for="creditCardNumber">Kreditkartennummer:</label>
+			<input type="text" id="creditCardNumber" name="creditCardNumber"><br><br>
+			<label for="expirationDate">Ablaufdatum:</label>
+			<input type="text" id="expirationDate" name="expirationDate"><br><br>
+			<label for="securityCode">Sicherheitscode:</label>
+			<input type="text" id="securityCode" name="securityCode"><br><br>
+			<button class="next-button" type="button" onclick="submitForm()">Absenden</button>
+		</form>
+	</div>
+	
+	<!-- Fortschrittsanzeige -->
+	<div style="margin-top: 20px;">
+		<h2>Stufe:</h2>
+		<p id="step-status"></p>
+	</div>
+	
+	<script>
+		var currentStep = 1;
+		
+		function nextStep(step) {
+			document.getElementById(`step-${currentStep}`).style.display = 'none';
+			currentStep = step;
+			document.getElementById(`step-${step}`).style.display = 'block';
+			updateStepStatus();
+		}
+		
+		function updateStepStatus() {
+			document.getElementById('step-status').innerHTML = `Stufe ${currentStep} von 3`;
+		}
+		
+		function submitForm() {
+			alert('Die Formularabgabe ist erfolgreich!');
+			window.location.href = 'danke.html'; // Beispiel: nach erfolgreicher Abgabe wird die Benutzer auf eine danke-Seite weitergeleitet
+		}
+	</script>
+</body>
+</html>

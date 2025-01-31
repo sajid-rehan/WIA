@@ -1,0 +1,106 @@
+ Um eine einfache React-Komponente für ein Login-Formular zu erstellen, müssen wir ein Formular mit Textfeldern für Benutzername und Passwort sowie Buttons zum Anmelden und zur Registrierung implementieren. Wir verwenden hierbei das `react`-Paket, `react-dom`, und `formik` für die Handhabung von Formularen.
+
+Führe zunächst die folgenden Schritte aus:
+
+1. Installiere die erforderlichen Pakete mit der Hilfe des folgenden Befehls:
+
+```bash
+npm install react react-dom formik yup
+```
+
+2. Erstelle nun eine neue Datei namens `LoginForm.js` und füge das folgende Code hinzu:
+
+```javascript
+import React from 'react';
+import { Form, Field } from 'formik';
+import * as Yup from 'yup';
+
+const LoginForm = () => {
+  const validationSchema = Yup.object().shape({
+    username: Yup.string()
+      .required('Username is required')
+      .min(3, 'Username must be at least 3 characters long'),
+    password: Yup.string()
+      .required('Password is required')
+      .min(6, 'Password must be at least 6 characters long'),
+  });
+
+  const initialValues = {
+    username: '',
+    password: '',
+  };
+
+  return (
+    <Form initialValues={initialValues} validationSchema={validationSchema}>
+      <label htmlFor="username">Username:</label>
+      <Field type="text" name="username" id="username" />
+      {/* ... */}
+
+      <label htmlFor="password">Password:</label>
+      <Field type="password" name="password" id="password" />
+
+      <button type="submit">Login</button>
+    </Form>
+  );
+};
+
+export default LoginForm;
+```
+
+3. Füge den Import dieser Komponente in eine andere Datei, z.B., `App.js`, hinzu:
+
+```javascript
+import React from 'react';
+import './App.css';
+import LoginForm from './LoginForm';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Login</h1>
+      <LoginForm />
+    </div>
+  );
+}
+
+export default App;
+```
+
+4. Füge dem Stylesheet `App.css` die folgenden CSS-Regeln hinzu:
+
+```css
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button[type='submit'] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+```
+
+5. Lade die App mit dem Befehl `npm start`.
+
+Du solltest eine einfache Login-Anwendung sehen, in der du deinen Benutzernamen und Passwort eingeben kannst, um dich anzumelden.
+

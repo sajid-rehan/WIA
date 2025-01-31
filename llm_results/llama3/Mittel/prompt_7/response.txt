@@ -1,0 +1,77 @@
+Hier ist ein Beispiel für eine simple HTML-Struktur, die eine dreispaltige Grid-Anordnung, eine Navigationsleiste und eine Fußzeile enthält:
+
+**index.html**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dreispaltige Grid-Anordnung</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		#grid-container {
+			display: grid;
+			grid-template-columns: 1fr 2fr 1fr;
+			grid-gap: 10px;
+			padding: 20px;
+		}
+		
+		.grid-item {
+			background-color: #f0f0f0;
+			padding: 20px;
+			border: 1px solid #ddd;
+		}
+		
+		.navbar {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		
+		.footer {
+			background-color: #666;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navigationsleiste -->
+	<nav class="navbar">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Grid-Anordnung -->
+	<div id="grid-container">
+		<div class="grid-item">Grid-Element 1</div>
+		<div class="grid-item">Grid-Element 2</div>
+		<div class="grid-item">Grid-Element 3</div>
+		<div class="grid-item">Grid-Element 4</div>
+	</div>
+	
+	<!-- Fußzeile -->
+	<footer class="footer">
+		Copyright &copy; 2023, alle Rechte vorbehalten.
+	</footer>
+</body>
+</html>
+```
+Dieses Beispiel verwendet HTML und CSS, um eine einfache Webseite mit einer dreispaltigen Grid-Anordnung, einer Navigationsleiste und einer Fußzeile zu erstellen.
+
+Die Grid-Anordnung wird durch die `grid-template-columns` Eigenschaft in der CSS-Definition des Containers (`#grid-container`) definiert. Hier wird eine 3-Spalte-Aufteilung mit je einem Balken (`1fr`) und zwei Balken (`2fr`) definiert. Der Abstand zwischen den Elementen innerhalb des Grids wird durch die `grid-gap` Eigenschaft auf 10 Pixel festgelegt.
+
+Die Navigationsleiste wird als `<nav>`-Element definiert, das eine schwarze Hintergrundfarbe und weiße Textfarbe hat. Es enthält eine Liste von Links (`<ul>`) mit drei Elementen (`<li>`).
+
+Die Fußzeile wird als `<footer>`-Element definiert, das eine dunkle Hintergrundfarbe und weiße Textfarbe hat. Es enthält eine Copyright-Nachricht.
+
+Dieses Beispiel ist nur ein einfaches Beispiel für eine Webseite mit einer dreispaltigen Grid-Anordnung, Navigationsleiste und Fußzeile. Sie können die Stildefinitionen anpassen, um die Aussehen der Webseite zu verändern.
+

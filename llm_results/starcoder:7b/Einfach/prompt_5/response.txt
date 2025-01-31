@@ -1,0 +1,66 @@
+
+2. Drücken Sie F5, um das Programm im Debugmodus auszuführen.
+3. Verschieben Sie den Mauszeiger über die Schaltfläche.
+4. Halten Sie die linke Maustaste gedrückt, und ziehen Sie sie in einen Bereich außerhalb der Schaltfläche.
+5. Ziehen Sie die Schaltfläche aus dem Bereich, um ihr zu entfernen.
+6. Halten Sie die linke Maustaste gedrückt, und bewegen Sie den Cursor in das Quadrat (auch als "Bereich" bezeichnet).
+7. Lassen Sie die linke Maustaste los.
+
+    ![Ziehen des Rahmens zur Entfernung der Schaltfläche](../designers/media/wpfintrofigure3.png)
+
+8. Klicken Sie in der Titelleiste auf das Symbol „Code anzeigen“ (die dritte Zeile in dieser Abbildung).
+
+    Das Fenster **XAML-Designer** wird mit einem Quellcode-Editor geöffnet, in dem ein `<Grid>`-Stammelement erweitert ist.
+
+9. Löschen Sie den `<Rectangle>`-Tag, das sich im untergeordneten Element des Steuerelements befindet, damit das folgende Markup für die Schaltfläche angezeigt wird:
+
+    ```xml
+    <Button Content="Click Me" HorizontalAlignment="Left" Margin="85, 342, 0, 0" VerticalAlignment="Top" Width="75"/>
+    ```
+
+10. Drücken Sie F5, um das Programm im Debugmodus erneut auszuführen.
+
+    Nun wird die Schaltfläche angezeigt und ist in der Mitte des Bereichs gespeichert.
+
+    ![Das Rahmen der Schaltfläche wurde entfernt](../designers/media/wpfintrofigure4.png)
+
+11. Kehren Sie zum Fenster **XAML-Designer** zurück, und erweitern Sie das `<Button>`-Tag, um den Inhalt des Steuerelements anzuzeigen:
+
+    ```xml
+    <Button Content="Click Me" HorizontalAlignment="Left" Margin="85, 342, 0, 0" VerticalAlignment="Top" Width="75">
+      <Button.Background>
+        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+          <GradientStop Color="#FFA3B0CB"/>
+          <GradientStop Color="#FFE3E6AB" Offset="1"/>
+        </LinearGradientBrush>
+      </Button.Background>
+    </Button>
+    ```
+
+12. Legen Sie den Fokus auf das `<Button.Background>`-Tag fest, indem Sie STRG+F2 drücken oder im Kontextmenü des XAML-Designers auf **Fokus** klicken.
+13. Wählen Sie in der Liste „Eigenschaft“ die Option **Zeiger (LinearGradientBrush)** aus.
+
+    ![Bearbeiten von Eigenschaften für den Farbverlauf](../designers/media/wpfintrofigure5.png)
+
+14. Klicken Sie auf das Symbol mit dem Lupe-Symbol, um den Dialog zum Bearbeiten des Farbverlaufs zu öffnen:
+
+    ![Dialogfeld „Farbverlauf bearbeiten“](../designers/media/wpfintrofigure6.png)
+
+15. Ändern Sie die Farbe in **#FF3D9970**.
+16. Kehren Sie zum XAML-Designer zurück, und wählen Sie das `<Button>`-Tag aus:
+
+    ![Zwischen den beiden Schaltflächen geänderte Farben](../designers/media/wpfintrofigure7.png)
+
+17. Ändern Sie die Eigenschaft **Margin** in **85, 342, 100, 0**.
+
+    ![Hinzufügen einer Abstandslinie zwischen den beiden Schaltflächen](../designers/media/wpfintrofigure8.png)
+
+18. Drücken Sie F5, um das Programm im Debugmodus erneut auszuführen.
+
+    Die Rahmen der beiden Schaltflächen ändern sich, und die Abstandslinie wird hinzugefügt:
+
+    ![Die Rahmen der beiden Schaltflächen werden angezeigt](../designers/media/wpfintrofigure10.png)
+
+## <a name="see-also"></a>Siehe auch
+ [Tutorials zu Visual Studio](/visualstudio/)
+

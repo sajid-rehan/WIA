@@ -1,0 +1,23 @@
+
+Hier ist ein Beispiel für ein Kontaktformular mit den von Ihnen gewünschten Feldern:
+
+<html>
+  <head>
+    <title>Kontaktformular</title>
+  </head>
+  <body>
+    <h1>Kontaktformular</h1>
+    <form action="mailto:your@email.com" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message"></textarea><br><br>
+      <input type="submit" value="Senden">
+    </form>
+  </body>
+</html>
+
+Dieses Formular sendet die Daten an Ihre E-Mail-Adresse. Sie können das Attribut "action" im Form-Tag ändern, um eine andere E-Mail-Adresse oder sogar einen Mailto-Link zu verwenden, der den Browser auffordert, eine neue E-Mail zu erstellen und die Daten des Kontaktformulars direkt in der Nachricht einzufügen.
+

@@ -1,0 +1,40 @@
+Hier ist ein Beispiel für eine einfache Schaltfläche in HTML und CSS, die bei Klick ihre Farbe ändert:
+```
+<!-- HTML -->
+<button id="myButton">Klicken mich!</button>
+
+<!-- CSS -->
+#myButton {
+  background-color: #4CAF50; /* Startfarbe */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#myButton:hover {
+  background-color: #3e8e41; /* Hover-Farbe */
+}
+
+#myButton:active {
+  background-color: #2c6a37; /* Active-Farbe */
+}
+
+#myButton.clicked {
+  background-color: #f44336; /* Klick-Farbe */
+}
+```
+In diesem Beispiel verwenden wir die Pseudo-Klassen `:hover` und `:active` um die Farben bei Hover- und Aktivität zu ändern. Die Pseudo-Klasse `:clicked` wird verwendet, wenn der Button geklickt wurde.
+
+ Wir können das Verhalten des Buttons durch eine einfache JavaScript-Funktion ändern, indem wir die Klasse `clicked` hinzufügen oder entfernen, je nachdem ob der Button geklickt wurde oder nicht.
+```
+// JavaScript
+document.getElementById("myButton").addEventListener("click", function() {
+  this.classList.toggle("clicked");
+});
+```
+Dieses Skript fügt oder entfernt die Klasse `clicked` vom Button, wenn er geklickt wird. Dadurch ändert sich die Farbe des Buttons.
+
+ Beachte, dass dies nur ein einfaches Beispiel ist und es viele Möglichkeiten gibt, die Schaltfläche zu personalisieren und zu verbessern.
+

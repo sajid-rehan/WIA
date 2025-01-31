@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Telefonnummer:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <button type="submit">Senden</button>
+    </form>
+
+    <form>
+        <label for="street">Straße:</label>
+        <input type="text" id="street" name="street"><br><br>
+
+        <label for="city">Ort:</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="zipcode">PLZ:</label>
+        <input type="number" id="zipcode" name="zipcode"><br><br>
+
+        <button type="submit">Senden</button>
+    </form>
+
+    <form>
+        <label for="card_number">Kreditkartennummer:</label>
+        <input type="text" id="card_number" name="card_number"><br><br>
+
+        <label for="expiration_date">Ablaufdatum:</label>
+        <input type="date" id="expiration_date" name="expiration_date"><br><br>
+
+        <label for="cvv">CVV-Code:</label>
+        <input type="text" id="cvv" name="cvv"><br><br>
+
+        <button type="submit">Senden</button>
+    </form>
+
+    <script>
+        const form1 = document.getElementById("form1");
+        const form2 = document.getElementById("form2");
+        const form3 = document.getElementById("form3");
+
+        let progress = 0;
+
+        form1.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // hier kannst du den Fortschritt des Kunden anzeigen
+            console.log(`Fortschritt: ${progress}%`);
+
+            if (progress === 100) {
+                form2.submit();
+            }
+        });
+
+        form2.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // hier kannst du den Fortschritt des Kunden anzeigen
+            console.log(`Fortschritt: ${progress}%`);
+
+            if (progress === 200) {
+                form3.submit();
+            }
+        });
+
+        form3.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // hier kannst du den Fortschritt des Kunden anzeigen
+            console.log(`Fortschritt: ${progress}%`);
+
+            if (progress === 300) {
+                // hier kannst du eine Bestätigungsseite anzeigen und den Fortschritt als abgeschlossen markieren
+            }
+        });
+    </script>
+</body>
+
+</html>

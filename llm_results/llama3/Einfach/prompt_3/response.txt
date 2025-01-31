@@ -1,0 +1,16 @@
+Here is the output:
+
+**<style>**
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+</style>**
+
+This code sets a serifenless font (Arial) for the entire page using CSS. It also defines styles for headings (h1-h6) to make them bold.
+
+Let me know if you'd like me to apply this style to a specific text or content!
+

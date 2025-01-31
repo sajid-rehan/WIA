@@ -1,0 +1,26 @@
+
+Um eine Hover-Animation für Schaltflächen zu erstellen, die eine langsame Wechselung der Hintergrundfarbe zeigt, können Sie CSS verwenden. Hier ist ein Beispiel:
+```
+button {
+  background-color: #007bff; /* Standard-Hintergrundfarbe */
+}
+
+button:hover {
+  animation: color-change 2s infinite; /* 2 Sekunden langsam, unendlich oft */
+}
+
+@keyframes color-change {
+  0% {
+    background-color: #007bff; /* Startwert */
+  }
+  100% {
+    background-color: #0069d9; /* Endwert */
+  }
+}
+```
+Dieses Beispiel verwendet den `:hover`-Pseudo-Klassenauswahl, um die Animation für den Mauszeiger-Ereignis zu aktivieren. Die `animation`-Eigenschaft wird verwendet, um die Animation zu definieren. Der Wert `color-change` ist der Name der Animation.
+
+Der `@keyframes`-Block definiert den Verlauf der Animation. In diesem Beispiel wechselt die Hintergrundfarbe langsam von #007bff zu #0069d9. Die `0%`-Wert gibt den Startwert an, der als `#007bff` festgelegt ist. Der `100%`-Wert gibt den Endwert an, der als `#0069d9` festgelegt ist.
+
+Dieser Code erzeugt eine Hover-Animation für Schaltflächen, bei der die Hintergrundfarbe langsam wechselt. Sie können das Verhalten der Animation durch Anpassen des Werts in der `animation`-Eigenschaft und des `@keyframes`-Blocks ändern.
+

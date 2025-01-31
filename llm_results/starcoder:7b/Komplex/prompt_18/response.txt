@@ -1,0 +1,8 @@
+ Dazu überprüft das Lighthouse die Seite auf veraltete und/oder falsche ARIA-Attribute, sowie prüft ob es offene Bereiche zum Inhalt oder Interaktion gegeben hat (z. B.: Tastaturfokus).",
+            "failureTitle": "ARIA-Labels für alle interaktiven Elemente fehlen",
+            "learnMoreLink": "Lesen Sie mehr über ARIA-Attribute",
+            "order": 6
+        }
+    ]
+}
+

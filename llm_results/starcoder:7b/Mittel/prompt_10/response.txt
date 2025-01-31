@@ -1,0 +1,11 @@
+ Füge unterhalb der Navigationsleiste das Menü „Alle“ ein. Wähle im neu angezeigten Menü „Alle“ aus. Öffne nun die Registerkarte „Übersicht“, um den Status des Geräts zu überprüfen. Diese Daten wurden bereits gesendet.
+
+Dieses Video zeigt das Ergebnis:
+> [!VIDEO https://www.youtube.com/embed/0Z5C-xO3iAc]
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen 
+
+[!INCLUDE [iot-central-clean-up-resources](../../../includes/iot-central-clean-up-resources.md)]
+
+
+

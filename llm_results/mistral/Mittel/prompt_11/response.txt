@@ -1,0 +1,55 @@
+ Um ein Bilderkarussell mit Vorwärts- und Rückwärts-Schaltflächen zu erstellen, können wir in unserem Projekt Framework wie React verwenden. Hier ist eine einfache Implementierung des Bilderkarussells:
+
+```jsx
+import React, { useState } from 'react';
+
+const ImageCarousel = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const goToPreviousImage = () => {
+    const newIndex = currentImageIndex - 1;
+    if (newIndex < 0) newIndex = images.length - 1;
+    setCurrentImageIndex(newIndex);
+  };
+
+  const goToNextImage = () => {
+    const newIndex = currentImageIndex + 1;
+    if (newIndex >= images.length) newIndex = 0;
+    setCurrentImageIndex(newIndex);
+  };
+
+  return (
+    <div className="image-carousel">
+      <button onClick={goToPreviousImage}>Previous</button>
+      <img src={images[currentImageIndex]} alt="" />
+      <button onClick={goToNextImage}>Next</button>
+    </div>
+  );
+};
+
+export default ImageCarousel;
+```
+
+Um dieses Bilderkarussell zu nutzen, müssen wir es in unserem Hauptkomponenten einbinden und die Images-Array mit den Pfaden unserer Bilder versorgen:
+
+```jsx
+import React from 'react';
+import ImageCarousel from './ImageCarousel';
+
+const images = [
+  'url/to/image1.jpg',
+  'url/to/image2.jpg',
+  'url/to/image3.jpg'
+];
+
+const App = () => (
+  <div className="app">
+    <ImageCarousel images={images} />
+  </div>
+);
+
+export default App;
+```
+
+Auf diese Weise erhalten wir ein Bilderkarussell, das mit Vorwärts- und Rückwärts-Schaltflächen ausgestattet ist.
+

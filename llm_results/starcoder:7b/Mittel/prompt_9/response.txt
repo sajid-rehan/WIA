@@ -1,0 +1,57 @@
+
+
+### Schritt 3: Verbinden des Frontends mit dem Backend
+
+Nun, da die beiden Dienste miteinander verbunden sind, müssen wir das Frontend anpassen und die URL des Backend zu unserem Frontend hinzufügen. Dazu müssen wir in der Datei `src/index.js` die folgenden Zeilen entfernen:
+
+    import App from './components/App';
+
+und diese neuen Zeilen einbinden:
+
+    // Wechseln auf das Verzeichnis "app", was bedeutet, dass es sich um den Ordner
+    // mit unserem Frontend-Code handelt.
+    process.chdir(__dirname + '/app');
+
+    import App from './components/App';
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import { BrowserRouter } from 'react-router-dom';
+    import createSocketIoConnector from '@feathersjs/socketio-client'
+
+    // Wir geben unserem Socket.IO Client eine URL an, die wir aus den Konfigurationen laden
+    const connector = createSocketIoConnector(process.env.FEATHERS_URI)
+
+    // Importieren Sie den Service "users", um ihn zu nutzen.
+    import { service } from '../app/services';
+
+    ReactDOM.render((
+        <BrowserRouter>
+            <App feathers={connector} usersService={service}/>
+        </BrowserRouter>),
+      document.getElementById('root')
+    );
+
+Wir haben nun eine Verbindung zum Backend hergestellt und können uns mit den Services des Backends verbinden. In diesem Fall sind wir auf die Users-API zuzugreifen, das ist der Service "users". Wir müssen dies immer wieder tun wenn wir einen neuen Service verwenden wollen!
+
+### Schritt 4: Konfigurieren des Backends für Authentifizierung
+
+In diesem Beispiel werden wir die Authentifizierung zwischen unserem Frontend und dem Backend konfigurieren, damit sich Benutzer bei einem Login anmelden können.
+
+Wir müssen daher `src/config/default.json` ändern:
+
+    {
+      "host": process.env.HOST || 'localhost',
+      "port": process.env.PORT || 3030,
+      "database": "feathers",
+      "username": null,
+      "password": <PASSWORD>,
+      "authentication": true
+    }
+
+Wir müssen den Wert für `authentication` auf `true` setzen und das Backend neu starten. Anschließend sollte es nun funktionieren!
+
+
+## Lizenz
+
+[MIT](LICENSE)
+

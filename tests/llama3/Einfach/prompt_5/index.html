@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myButton {
+            background-color: #4CAF50;
+            /* Startfarbe */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #myButton:hover {
+            background-color: #3e8e41;
+            /* Hover-Farbe */
+        }
+
+        #myButton:active {
+            background-color: #2c6a37;
+            /* Active-Farbe */
+        }
+
+        #myButton.clicked {
+            background-color: #f44336;
+            /* Klick-Farbe */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="myButton">Klicken mich!</button>
+    <script>
+        document.getElementById("myButton").addEventListener("click", function () {
+            this.classList.toggle("clicked");
+        });
+    </script>
+</body>
+
+</html>

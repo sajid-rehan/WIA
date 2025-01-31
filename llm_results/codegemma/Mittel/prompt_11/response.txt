@@ -1,0 +1,55 @@
+```
+import React, { useState } from 'react';
+
+const ImageCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePreviousImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const handleNextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  return (
+    <div className="carousel">
+      <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} />
+      <button onClick={handlePreviousImage}>Vorherige</button>
+      <button onClick={handleNextImage}>Nächste</button>
+    </div>
+  );
+};
+
+export default ImageCarousel;
+```
+
+**Verwendung:**
+
+```
+<ImageCarousel images={['image1.jpg', 'image2.jpg', 'image3.jpg']} />
+```
+
+**Beschreibung:**
+
+* Die Komponente `ImageCarousel` nimmt eine Liste von Bildern (`images`) als props.
+* Der aktuelle Index des angezeigten Bildes wird mithilfe von `useState` verwaltet.
+* `handlePreviousImage()` und `handleNextImage()` ändern den Index basierend auf die Richtung des Klicks.
+* Das aktuelle Bild wird basierend auf dem Index angezeigt.
+* Vorwärts- und Rückwärts-Schaltflächen sind für die Navigation verantwortlich.
+
+**CSS:**
+
+```
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel img {
+  width: 500px;
+  height: 300px;
+}
+```
+

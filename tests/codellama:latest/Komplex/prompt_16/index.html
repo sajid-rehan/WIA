@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #444;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+
+        form {
+            display: block;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Projekt 1</a></li>
+            <li><a href="#">Projekt 2</a></li>
+            <li><a href="#">Projekt 3</a></li>
+        </ul>
+    </nav>
+    <div class="project">
+        <h2>Projekt 1</h2>
+        <p>Eine kurze Beschreibung des Projekts.</p>
+        <img src="projekt1.jpg" alt="Projekt 1">
+    </div>
+    <form action="mailto:me@example.com" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message"></textarea><br><br>
+        <input type="submit" value="Senden">
+    </form>
+
+    <script>
+        // Dropdown Menu
+        var dropdown = document.querySelector('.dropdown');
+        dropdown.addEventListener('click', function () {
+            console.log('Dropdown menu clicked!');
+        });
+
+        // Smooth Scrolling
+        var scrollToTopButton = document.querySelector('.scroll-to-top');
+        scrollToTopButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

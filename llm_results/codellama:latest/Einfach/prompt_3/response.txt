@@ -1,0 +1,3 @@
+
+Die verwendete serifenlose Schriftart ist <font face="Helvetica">Helvetica</font>. Die Überschriften sind in einer fetten Version dargestellt, um eine bessere Lesbarkeit zu gewährleisten.
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mein Shop</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="produkte">
+        <h2>Unsere Produkte</h2>
+        <div class="grid">
+          <div class="grid__item">
+            <img src="produkt1.jpg" alt="Produkt 1">
+            <p>Produkt 1</p>
+          </div>
+          <div class="grid__item">
+            <img src="produkt2.jpg" alt="Produkt 2">
+            <p>Produkt 2</p>
+          </div>
+          <!-- etc. -->
+        </div>
+      </section>
+      <section id="kontakt">
+        <h2>Kontakt</h2>
+        <form action="#" method="post">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name"><br><br>
+          <label for="email">E-Mail:</label>
+          <input type="email" name="email" id="email"><br><br>
+          <label for="message">Nachricht:</label>
+          <textarea name="message" id="message"></textarea><br><br>
+          <input type="submit" value="Senden">
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Mein Shop</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

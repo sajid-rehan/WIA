@@ -1,0 +1,128 @@
+
+ms.prod: xamarin
+ms.assetid: A835C1B4-A603-9D27-30FC-F1ECE51DA2DB
+author: davidortinau
+ms.author: daortin
+ms.date: 11/13/2017
+ms.openlocfilehash: b5e7847d6dfcc9b922b29f9ec9c7ebda24b27bc2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008183"
+---
+# <a name="walkthrough---create-an-e-commerce-site"></a>Exemplarische Vorgehensweise: Erstellen einer e-Commerce-Website
+
+Dieses Handbuch enthält Schrittanleitungen zum Erstellen eines Beispiel für eine e-Commerce-Anwendung, die auf der Xamarin. Forms-Plattform funktioniert. Die Anwendung ist ein einfaches kostenloses Shop, das in einer Webseite angezeigt wird und von einem Server gehostet wird. Die Seite enthält einen Einkaufswagen (wie im folgenden Screenshot gezeigt) mit der Möglichkeit zum Auswählen eines Produkts aus dem Warenkorb sowie die Möglichkeit, die Anzahl von Artikeln zu ändern und den Betrag in das Kaufteil zu zahlen.
+
+[![](walkthrough-images/10-final-app.png "Die finalen Seiten für e-Commerce")](walkthrough-images/10-final-app.png#lightbox)
+
+ [![](walkthrough-images/12-productpage.png "Der Produktseite im Beispiel")](walkthrough-images/12-productpage.png#lightbox)
+
+## <a name="creating-the-xamarinforms-solution"></a>Erstellen der xamarin. Forms Lösung
+
+Die erste Aufgabe besteht darin, eine neue xamarin. Forms-Lösung zu erstellen und die Schritte zum Erstellen einer e-Commerce-Anwendung auszuführen:
+
+1. Starten Sie Visual Studio für Mac oder Visual Studio.
+2. Klicken Sie auf **neu** , und wählen Sie dann **Projekt hinzufügen...** aus.
+3. Wählen Sie die Vorlage **xamarin. Forms-App** im linken Bereich der Dialogfeld Optionen aus: 
+
+    [![](walkthrough-images/01-newproject-sml.png "Wählen Sie die Vorlage xamarin. Forms-app aus.")](walkthrough-images/01-newproject.png#lightbox)
+
+4. Geben Sie einen Namen für das Projekt (z. b. `ShoppingCart`), und klicken Sie auf **weiter** .
+5. Wählen Sie die Option **Leere App**aus, und klicken Sie dann auf **Fertig**stellen: 
+
+    [![](walkthrough-images/02-blankapp-sml.png "Wählen Sie die leere APP aus.")](walkthrough-images/02-blankapp.png#lightbox)
+
+6. Wählen Sie im **Projektmappen-Explorer**das Projekt Shoppingcart, und klicken Sie dann auf den Menübefehl **Hinzufügen > neues Element...** .
+7. Wählen Sie die Vorlage **Auflistungs Seite XAML** aus: 
+
+    [![](walkthrough-images/03-newitem-sml.png "Wählen Sie die Auflistungsseite XAML aus.")](walkthrough-images/03-newitem.png#lightbox)
+
+8. Geben Sie einen Namen für die Seite (z. b. `ProductPage`) und klicken Sie auf **Hinzufügen**.
+9. Ersetzen Sie in der Datei "Productpage" den Inhalt der Datei durch folgenden XAML:
+
+    ```xaml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           x:Class="ShoppingCart.ProductPage">
+      <!-- Note that the ContentPage name does not match the namespace; it is used to identify the root element when the XAML is compiled in release mode, but it doesn't need to match in debug mode because the content page will be set to the root node of the NavigationPage-->
+       <ContentPage.Resources>
+           <!-- A style that defines the appearance of all labels on the screen -->
+          <OnPlatform x:TypeArguments="x:String">
+              <On Platform="iOS, Android" Value="Bold, 24"/>
+              <On Platform="UWP" Value="18"/>
+              <On Platform="WinPhone" Value="16"/>
+          </OnPlatform>
+       </ContentPage.Resources>
+
+        <!-- Layout the page vertically with labels stacked in top to bottom -->
+        <StackLayout VerticalOptions="FillAndExpand">
+            <!-- Title for the product -->
+           <Label Text="{x:Static resx:AppResources.ProductTitle}" FontSize="Large"  />
+
+           <!-- The image for the product, using ImageFromUrlConverter to convert a URL into an ImageSource -->
+          <Image Source="{Binding ImageUrl, Converter={StaticResource ImageFromUrlConverter}}" HeightRequest="120"/>
+
+          <!-- Product description -->
+           <Label Text="{Binding Description}" FontSize="Small" />
+
+           <!-- Current price of the product -->
+          <StackLayout Orientation="Horizontal">
+              <Label Text="{x:Static resx:AppResources.Price}:" />
+                 <Label Text="{Binding Price, StringFormat='C'}" HorizontalOptions="EndAndExpand"/>
+           </StackLayout>
+
+            <!-- Buy button to add the current item to the cart -->
+            <Button Text="In den Warenkorb" Clicked="OnBuyClicked" />
+        </StackLayout>
+    </ContentPage>
+    ```
+
+10. Klicken Sie im **Projektmappen-Explorer**auf die Datei "App. XAML", um Sie in der Editor anzuzeigen: 
+
+    [![](walkthrough-images/04-appxaml-sml.png "Die App. XAML-Datei")](walkthrough-images/04-appxaml.png#lightbox)
+
+11. Fügen Sie den folgenden Code der `App`-Klasse hinzu, um die Standard Seite in der Navigation aufzunehmen:
+
+    ```csharp
+    using System;
+    using Xamarin.Forms;
+    namespace ShoppingCart
+    {
+        public partial class App : Application
+        {
+            public App()
+            {
+                InitializeComponent();
+
+                MainPage = new NavigationPage(new ProductPage());
+            }
+
+        }
+    }
+    ```
+
+12. Erstellen Sie das Projekt, und führen Sie es aus. Wenn die Anwendung ausgeführt wird, sollte eine einfache Seite mit einem Bild und einem beschreibenden Text angezeigt werden: 
+
+    [![](walkthrough-images/05-productpage.png "Die Seite "Productpage"")](walkthrough-images/05-productpage.png#lightbox)
+
+## <a name="creating-the-webservice"></a>Erstellen des Webdiensts
+
+Nachdem wir nun die grundlegenden Schritte zum Erstellen einer einfachen Anwendung erstellt haben, ist es Zeit, den Server zu erstellen und eine Webseite zu hosten. Die e-Commerce-Anwendung verwendet einen Webdienst zum Senden von Daten an die Anwendung. Der Webdienst wird in C# als RESTful-Webdienst gehostet.
+
+### <a name="creating-the-server"></a>Erstellen des Servers
+
+1. Installieren Sie den **nuget** -Paket-Manager, indem Sie das nuget. exe von der [nuget](https://www.nuget.org/downloads) -Website herunterladen und installieren.
+2. Starten Sie Visual Studio für Mac oder Visual Studio mit Administratorrechten, wenn dies noch nicht geschehen ist. Dieser Schritt ermöglicht Visual Studio die Ausführung von Befehlszeilen Tools auf einem anderen Knoten im Netzwerk als dem lokalen Computer. 
+3. Öffnen Sie ein Terminal, und navigieren Sie zu einem Speicherort zum Hosten des Webdiensts (in diesem Beispiel ist das Verzeichnis "Projects" verwendet): 
+
+    `cd ~/Projects`
+
+4. Geben Sie den folgenden Befehl in der Konsole ein, um den nuget-Paket-Manager zu installieren: 
+
+    ```bash
+    mono /Applications/Xamarin\ Studio.app/Contents/) <1207
+12090638950e150d.901340906040900_c00260600005000000_00000008000001000000000000000001000000000000700000000000000020000000300000000000060000000000000000000000000000000
+

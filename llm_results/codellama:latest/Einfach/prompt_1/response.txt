@@ -1,0 +1,19 @@
+
+<html>
+  <head>
+    <title>Meine Webseite</title>
+  </head>
+  <body>
+    <h1>Willkommen auf meiner Webseite!</h1>
+    <p>Hier findest du wichtige Informationen zu mir und meinen Interessen.</p>
+    <button onclick="myFunction()">Klick mich!</button>
+    <script>
+      function myFunction() {
+        alert("Du hast die Schaltfläche geklickt!");
+      }
+    </script>
+  </body>
+</html>
+
+In diesem Beispiel wurde eine Webseite erstellt, die eine Überschrift, einen Absatz und eine Schaltfläche enthält. Wenn der Benutzer auf die Schaltfläche klickt, wird ein JavaScript-Skript ausgelöst, das eine Nachricht im Browser anzeigt.
+

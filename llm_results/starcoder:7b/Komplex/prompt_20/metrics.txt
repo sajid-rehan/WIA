@@ -1,0 +1,8 @@
+total_duration: N/A
+load_duration: N/A
+prompt_eval_count: N/A
+prompt_eval_duration: N/A
+prompt_eval_rate: N/A
+eval_count: N/A
+eval_duration: N/A
+eval_rate: N/A

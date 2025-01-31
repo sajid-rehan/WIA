@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header,
+  .footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    clear: both;
+    text-align: center;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+  }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        nav .active {
+            font-weight: bold;
+            border-bottom: 2px solid #337ab7;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#overview" class="active">Übersicht</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#settings">Einstellungen</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nav = document.querySelector("nav");
+            const links = nav.querySelectorAll("a");
+
+            links.forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    links.forEach(function (otherLink) {
+                        otherLink.classList.remove("active");
+                    });
+                    link.classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

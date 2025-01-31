@@ -1,0 +1,25 @@
+Hier ist ein Beispiel für eine einfache Webseite in HTML:
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meine Webseite</title>
+</head>
+<body>
+	<h1>Mit Herzlichem Grüß!</h1>
+	<p>Hallo, ich bin eine einfache Webseite. Ich freue mich über Ihren Besuch!</p>
+	<button onclick="alert('Schaltfläche wurde geklickt!')">Klicken Sie hier!</button>
+</body>
+</html>
+```
+Erklärung:
+
+* Die `<!DOCTYPE html>`-Declaration sagt dem Browser, dass die Datei HTML5 ist.
+* Der `<head>`-Tag enthält Informationen über die Seite, wie den Titel (`<title>`) und CSS-Stile (nicht verwendet in diesem Beispiel).
+* Der `<body>`-Tag enthält das eigentliche Inhalt der Seite.
+* Die `<h1>`-Überschrift hat den Schriftgrad 1 (die größte Überschriftart).
+* Der `<p>`-Absatz ist ein einfacher Absatztext.
+* Die `button`-Schaltfläche hat eine Textbeschreibung (`"Klicken Sie hier!"`) und wird aufgerufen, wenn sie geklickt wird. In diesem Fall wird ein Alert-Dialogfenster angezeigt.
+
+Speichern Sie diese Datei mit einer Endung wie `.html` und öffnen Sie sie im Browser, um die Webseite zu sehen!
+

@@ -1,0 +1,45 @@
+1. Wir werden ein HTML- und JavaScript-Beispiel erstellen, um eine Schaltfläche zu erstellen, die bei Klick ihre Farbe ändert.
+
+2. Erstelle eine neue Datei im Texteditor namens `button_color_change.html` und füge Folgendes ein:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Color Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #colorPicker {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button Color Change</h1>
+    <button id="myBtn">Change Button Color</button>
+    <input type="color" id="colorPicker" value="#FF0000">
+    <script>
+        const myBtn = document.getElementById('myBtn');
+        const colorPicker = document.getElementById('colorPicker');
+
+        myBtn.addEventListener('click', function() {
+            myBtn.style.backgroundColor = colorPicker.value;
+        });
+    </script>
+</body>
+</html>
+```
+
+3. Speichere die Datei und öffne sie im Browser (Chrome, Firefox oder Edge).
+
+4. Du solltest eine Website mit dem Titel "Button Color Change" sehen. Es gibt ein rotes Quadrat, das den aktuellen Farbcode enthält und zwei Schaltflächen: "Change Button Color" und eine Schaltfläche zur direkten Auswahl der Farbe.
+
+5. Klicke auf die Schaltfläche "Change Button Color", um die Schaltfläche zu ändern. Du kannst auch den Farbwert direkt in dem roten Quadrat ändern, indem du es mit deinem Mauszeiger über das rote Quadrat ziehst und auf die neue Farbe klicke.
+
+6. Wenn du eine andere Farbe auswählst, wird automatisch auch die Schaltfläche geändert.
+

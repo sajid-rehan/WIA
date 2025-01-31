@@ -1,0 +1,52 @@
+Here is a basic navigation tab bar with three tabs:
+```
+<nav>
+  <ul>
+    <li><a href="#overview" class="active">Übersicht</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#settings">Einstellungen</a></li>
+  </ul>
+</nav>
+```
+You can add CSS styles to make it look nicer, for example:
+```
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+nav .active {
+  font-weight: bold;
+  border-bottom: 2px solid #337ab7;
+}
+```
+You can also add JavaScript code to make the tabs functional, for example:
+```
+document.addEventListener("DOMContentLoaded", function() {
+  const nav = document.querySelector("nav");
+  const links = nav.querySelectorAll("a");
+
+  links.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      links.forEach(function(otherLink) {
+        otherLink.classList.remove("active");
+      });
+      link.classList.add("active");
+    });
+  });
+});
+```
+This code adds an event listener to each tab link, which removes the active class from all other links and adds it to the clicked link.
+

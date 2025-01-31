@@ -1,0 +1,39 @@
+**HTML:**
+
+```html
+<button class="hover-animation">Button</button>
+```
+
+**CSS:**
+
+```css
+.hover-animation {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.hover-animation:hover {
+  background-color: #000;
+  color: #fff;
+}
+```
+
+**Erklärung:**
+
+* Die Klasse `hover-animation` wird auf den Button angewandt.
+* `background-color: #fff;` stellt die Standard-Hintergrundfarbe des Buttons ein.
+* `color: #000;` stellt die Standard-Textfarbe des Buttons ein.
+* `padding: 10px 20px;` fügt Padding zum Button hinzu.
+* `border: none;` löscht das Rand des Buttons.
+* `cursor: pointer;` stellt einen Zeigerhand symbol für den Cursor ein.
+* `transition: background-color 0.5s ease;` fügt einer Übergangsanimation zur Hintergrundfarbe hinzu. Dies bedeutet, dass die Hintergrundfarbe 0,5 Sekunden lang langsam geändert wird, wenn der Mauszeiger über den Button fährt wird.
+
+**Hinweis:**
+
+* Sie können die `transition-duration`-Eigenschaft in der CSS-Regel auf einen anderen Wert ändern, um die Geschwindigkeit der Übergangsanimation zu ändern.
+* Sie können auch verschiedene Hintergrundfarben verwenden, um die Hover-Effekte zu nhấn.
+

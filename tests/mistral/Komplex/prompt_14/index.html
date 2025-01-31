@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meine Webseite</title>
+    <!-- Link den CSS- und JS-Dateien hier an -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        main,
+        aside {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid #ccc;
+            transition: background-color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #f4f4f4;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+
+        article {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        aside {
+            background-color: #343a40;
+            color: #fff;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hinterlasse Platzhalter für die Hauptmenü, Produktliste und Kontaktformular -->
+    <header id="main-menu"></header>
+    <main id="product-grid">
+        <!-- Placeholder für die einzelnen Produkte -->
+    </main>
+    <aside id="contact-form"></aside>
+    <!-- Link den CSS- und JS-Dateien hier an -->
+
+    <script>
+        // Lade die Produktdaten von einer API oder einfüge sie hier als Array
+        const products = [
+            { name: 'Produkt 1', price: '$99' },
+            { name: 'Produkt 2', price: '$49' },
+            { name: 'Produkt 3', price: '$79' }
+        ];
+
+        // Erzeuge die Hauptmenü-Elemente
+        const mainMenu = document.createElement('nav');
+        mainMenu.innerHTML = `
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Produkte</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+`;
+        document.getElementById('main-menu').appendChild(mainMenu);
+
+        // Erzeuge die Produktliste-Elemente
+        products.forEach((product) => {
+            const productItem = document.createElement('article');
+            productItem.innerHTML = `
+    <h2>${product.name}</h2>
+    <p>${product.price}</p>
+  `;
+            document.getElementById('product-grid').appendChild(productItem);
+        });
+
+        // Erzeuge das Kontaktformular-Elemente
+        const contactForm = document.createElement('form');
+        contactForm.innerHTML = `
+  <label for="name">Name:</label>
+  <input type="text" id="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required>
+
+  <label for="message">Nachricht:</label>
+  <textarea id="message" required></textarea>
+
+  <button type="submit">Absenden</button>
+`;
+        document.getElementById('contact-form').appendChild(contactForm);
+    </script>
+</body>
+
+</html>

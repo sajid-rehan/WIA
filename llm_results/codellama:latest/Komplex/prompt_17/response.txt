@@ -1,0 +1,25 @@
+
+Hier ist ein Beispiel einer SEO-freundlichen HTML-Seite mit Meta-Tags für Titel, Beschreibung und Keywords:
+```html
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO-freundliche HTML-Seite</title>
+    <meta name="description" content="Dies ist eine SEO-freundliche HTML-Seite mit Meta-Tags für Titel, Beschreibung und Keywords." />
+    <meta name="keywords" content="SEO, HTML, Meta-Tags, Titel, Beschreibung, Keywords" />
+  </head>
+  <body>
+    <!-- Inhalt der Seite -->
+  </body>
+</html>
+```
+In diesem Beispiel haben wir folgende Meta-Tags hinzugefügt:
+
+* `<title>` zum Definieren des Titels der Webseite.
+* `<meta name="description"` zum Definieren einer kurzen Beschreibung der Webseite.
+* `<meta name="keywords"` zum Definieren von Schlüsselwörtern, die auf der Webseite vorkommen.
+
+Diese Meta-Tags sind wichtig für das Ranking einer Webseite im Suchmaschinen-Index und können dazu beitragen, dass eine Webseite von Suchmaschinen wie Google indexiert wird. Es ist jedoch wichtig, dass die Meta-Tags so definiert werden, dass sie den Bedürfnissen der Zielgruppe gerecht werden und nicht zu viel Platz einnehmen oder unnötige Inhalte enthalten.
+

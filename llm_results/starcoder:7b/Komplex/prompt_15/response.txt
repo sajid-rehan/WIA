@@ -1,0 +1,136 @@
+  
+  
+2.  Fügen Sie im Bereich **Datenquellen** eine Datenquelle hinzu, oder verwenden Sie eine bereits vorhandene. Wenn Sie eine neue Datenquelle erstellen müssen, finden Sie unter [Hinzufügen einer Datenquelle &#40;Berichts-Generator&#41;](report-data/add-a-data-source-report-builder-and-ssrs.md) weitere Informationen.  
+  
+3.  (Optional) Fügen Sie dem Bericht eine Parameterzeichenfolge hinzu, damit Benutzer das Diagramm mit den Parametern filtern können. Weitere Informationen finden Sie unter [Hinzufügen eines Parameters zu einem Diagramm &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-parameter-to-a-chart-report-builder-and-ssrs.md).  
+  
+4.  Fügen Sie dem Bericht ein Kreisdiagramm hinzu, das auf der Abfrage des Datenbereichs basiert. Weitere Informationen finden Sie unter [Hinzufügen eines Diagramms zu einem Bericht &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-chart-to-a-report-report-builder-and-ssrs.md).  
+  
+5.  Fügen Sie dem Diagramm einen Piesegment hinzu, um Statistiken für die einzelnen Datenpunkte anzuzeigen. Weitere Informationen finden Sie unter [Hinzufügen von Segmenten zu einem Diagramm &#40;Berichts-Generator und SSRS&#41;](report-design/add-segments-to-a-chart-report-builder-and-ssrs.md).  
+  
+6.  Wählen Sie den Bereich für Statistiken, der auf dem Piesegment basiert, aus. In dieser Ansicht werden die Gesamtsummen und Differenz zwischen den einzelnen Datenpunkten angezeigt.  
+  
+7.  Fügen Sie dem Diagramm einen Balkendiagramm hinzu, das auf der Abfrage des Datenbereichs basiert. Weitere Informationen finden Sie unter [Hinzufügen eines Berichtsdiagramms &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-bar-chart-to-a-report-report-builder-and-ssrs.md).  
+  
+8.  Fügen Sie dem Diagramm einen Bereich für Statistiken hinzu, um Statistiken für die einzelnen Datenpunkte anzuzeigen. Weitere Informationen finden Sie unter [Hinzufügen eines Bereichs für Statistiken zu einem Bericht &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-statistics-pane-to-a-report-report-builder-and-ssrs.md).  
+  
+9. Fügen Sie dem Diagramm einen Piesegment hinzu, um Statistiken für die einzelnen Datenpunkte anzuzeigen. Weitere Informationen finden Sie unter [Hinzufügen eines Segmentes zu einem Diagramm &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-pie-segment-to-a-chart-report-builder-and-ssrs.md).  
+  
+10. Wählen Sie den Bereich für Statistiken, der auf dem Piesegment basiert, aus. In dieser Ansicht werden die Gesamtsummen und Differenz zwischen den einzelnen Datenpunkten angezeigt.  
+  
+##  <a name="To"></a>Verwenden eines Diagramms in einem Bericht  
+ Sie können ein Kreisdiagramm in einem Bericht mit einem Piesegment sowie einem Balkendiagramm kombinieren, um die Gesamtsummen und Differenz zwischen den einzelnen Datenpunkten anzuzeigen. Weitere Informationen finden Sie unter [Hinzufügen eines Diagramms zu einem Bericht &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-chart-to-a-report-report-builder-and-ssrs.md).  
+  
+ Um ein Diagramm oder einen Bereich für Statistiken in den Ausgabedaten zu integrieren, können Sie das Diagramm als Berichtselement hinzufügen und die Datenquellenverbindung auf dem Berichtsdatenbereich löschen. Das Dataset wird dann automatisch anhand des Kreisdiagramms oder Bereichs für Statistiken erstellt. Weitere Informationen finden Sie unter [Integrating Data into Reports (Integrieren von Daten in Berichte)](../report-data/integrating-data-into-reports.md).  
+  
+##  <a name="DesigningChartTypes"></a> Entwerfen eines Diagramms  
+ Zum Entwerfen des Kreisdiagramms müssen Sie eine Abfrage hinzufügen, die dem Diagramm Daten bereitstellt. Zum Entwerfen der Piesegmente und Balkendiagramme müssen Sie mindestens einen Piesegment- oder Balkendiagrammpunkt auf dem Diagramm erstellen. Beim Entwerfen von Segmenten für Balkendiagramme können Sie festlegen, dass der Wert des Diagramms den Summenwert des Kreisdiagramms entspricht oder sich vom Summenwert des Kreisdiagramms verringert.  
+  
+ Im Folgenden sind weitere Features aufgeführt, die Sie in einem Diagramm hinzufügen können:  
+  
+-   Legende für das Diagramm zum Hinzufügen von Informationen zur Entwicklung und zum Verständnis der Daten  
+  
+-   Gruppierungen zum Erstellen eines Diagramms mit Datenpunkten, die mehrere Summenwerte anzeigen oder vergleichen.  
+  
+ Weitere Informationen finden Sie unter [Hinzufügen einer Legende zu einem Diagramm &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-legend-to-a-chart-report-builder-and-ssrs.md) und [Festlegen der Farben in einem Diagramm (Berichts-Generator und SSRS)](report-design/formatting-series-colors-on-a-chart-report-builder-and-ssrs.md).  
+  
+##  <a name="InThisSection"></a> In diesem Abschnitt  
+ [Diagramme &#40;Berichts-Generator und SSRS&#41;](report-design/charts-report-builder-and-ssrs.md)  
+ Beschreibt die grundlegenden Funktionen von Diagrammen in einem [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] -Bericht sowie das Erstellen und Anpassen eines Kreisdiagramms.  
+  
+ [Diagrammtypen &#40;Berichts-Generator und SSRS&#41;](report-design/chart-types-report-builder-and-ssrs.md)  
+ Beschreibt die verschiedenen Diagrammen, denen Sie mit [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] -Diagramme eine Datenanalyse zuordnen können.  
+  
+ [Berichts-Generator in SQL Server 2014](report-builder-in-sql-server-2016.md)  
+ Enthält Links zu den Themen, die Diagrammbeispiele enthalten.  
+  
+ ![rs_IconGraf](../../reporting-services/report-design/media/rs-icon-charts.gif "rs_IconGraf")**Andere Berichtstypen** finden Sie unter [Liste der Reporting Services-Tutorials &#40;SSRS&#41;](../reporting-services-tutorials-ssrs.md) und [Berichts-Generator in SQL Server 2014](report-builder/report-builder-in-sql-server-2016.md).  
+  
+## <a name="see-also"></a>Weitere Informationen finden Sie unter  
+ [Hinzufügen eines Diagramms zu einem Bericht &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-chart-to-a-report-report-builder-and-ssrs.md)   
+ [Formatieren von Linien, Füllungen und Rahmen (Berichts-Generator und SSRS)](report-design/formatting-lines-fills-and-borders-report-builder-and-ssrs.md)   
+ [Hinzufügen einer Legende zu einem Diagramm &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-legend-to-a-chart-report-builder-and-ssrs.md)   
+ [Hinzufügen eines Bereichs für Statistiken zu einem Bericht &#40;Berichts-Generator und SSRS&#41;](report-design/add-a-statistics-pane-to-a-report-report-builder-and-ssrs.md)   
+ [Formatieren von Diagrammen, die),
+
+
+
+)1))
+
+119)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Report:1.
+
+
+>
+F) (
+
+
+
+
+
+
+1010
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+report-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

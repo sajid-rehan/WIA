@@ -1,0 +1,51 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blogseite</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <h1>Blogseite</h1>
+    </header>
+
+    <nav>
+        <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Suchen">
+            <button type="submit">Suchen</button>
+        </form>
+    </nav>
+
+    <main>
+        <h2>Blog-Beiträge</h2>
+
+        <ul>
+            <li><a href="/blog/post-1">Beitrag 1</a></li>
+            <li><a href="/blog/post-2">Beitrag 2</a></li>
+            <li><a href="/blog/post-3">Beitrag 3</a></li>
+        </ul>
+    </main>
+</body>
+
+</html>
+```
+
+**Beschreibung:**
+
+* Die Seite verfügt über einen Header mit dem Titel "Blogseite".
+* In der Navigationsleiste befindet sich eine Suchfunktion mit einem Textfeld und einem Suchknopf.
+* Der Hauptteil der Seite enthält eine Überschrift für die Blog-Beiträge und eine Liste von drei Beispielbeiträgen mit Verweisen.
+
+**Funktionen:**
+
+* Die Suchfunktion ermöglicht es Benutzern, nach bestimmten Themen oder Inhalten in den Blog-Beiträgen zu suchen.
+* Die Liste von Beiträgen ist sortiert und kann jederzeit erweitert werden.
+
+**Hinweis:**
+
+* Die Links zu den Blog-Beiträgen sind fiktiv und sollten in Ihrer Website ersetzt werden.
+* Die Blog-Beiträge können in einer anderen Datei erstellt und eingebunden werden.
+

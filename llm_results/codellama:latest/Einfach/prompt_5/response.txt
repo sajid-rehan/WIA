@@ -1,0 +1,25 @@
+
+Hier ist ein Beispiel für eine Schaltfläche, die bei Klick ihrer Farbe ändert:
+```
+<button onclick="changeColor()">Click me!</button>
+
+<script>
+function changeColor() {
+  document.getElementById("myButton").style.backgroundColor = "red";
+}
+</script>
+```
+In diesem Beispiel wird die Schaltfläche mit dem Text "Click me!" erstellt und ein Skript angefügt, das die Methode `changeColor()` ausführt, wenn die Schaltfläche geklickt wird. Die Methode `changeColor()` ändert die Farbe der Schaltfläche in Rot durch das Festlegen des Attributs `backgroundColor` von `red`.
+
+Sie können auch andere Farben verwenden, indem Sie den Wert des Attributs ändern. Zum Beispiel:
+```
+<button onclick="changeColor()">Click me!</button>
+
+<script>
+function changeColor() {
+  document.getElementById("myButton").style.backgroundColor = "blue";
+}
+</script>
+```
+Dieser Code ändert die Farbe der Schaltfläche in Blau, wenn sie geklickt wird.
+

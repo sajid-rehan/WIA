@@ -1,0 +1,123 @@
+ Um eine Tab-Navigationsleiste in HTML zu erstellen, verwende ich die folgenden Schritte:
+
+1. Erstelle zunächst das Grundgerüst deiner HTML-Datei mit einem `<html>`-Tag, einem `<head>`- und einem `<body>`-Tag. In `<head>` kannst du Stile und Skripte einbinden. Im `<body>` deines HTML-Dokuments kannst du die Inhalte anordnen.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabbed Navigation</title>
+    <!-- Styles und Skripte einbinden -->
+  </head>
+  <body>
+    <!-- Inhalte deines Dokuments hier anordnen -->
+  </body>
+</html>
+```
+
+2. Erzeuge nun drei Div-Elemente, die als Tab-Container und die drei Tabs dienen werden. Geben Sie jeder `<div>` eine Klasse für einheitliches Styling und ordne sie in der Reihenfolge ‚Übersicht‘, ‚Details‘ und ‚Einstellungen‘ an.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabbed Navigation</title>
+    <!-- Styles und Skripte einbinden -->
+  </head>
+  <body>
+    <div class="tab-container">
+      <button class="tab tab-active" onclick="openCity(event, 'overview')">Übersicht</button>
+      <button class="tab" onclick="openCity(event, 'details')">Details</button>
+      <button class="tab" onclick="openCity(event, 'settings')">Einstellungen</button>
+    </div>
+
+    <!-- Hinzufügen der Tab-Inhalte unten -->
+  </body>
+</html>
+```
+
+3. Füge nun noch die Inhalte für jede der drei Tabs hinzu. Verwende hierfür weitere `<div>`-Elemente, gib jeder eine Klasse, und ordne sie in den Tab-Containern an. Setze alle zuerst auf eine nicht sichtbare Klasse, damit nur die aktive Tab-Inhalt angezeigt wird.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabbed Navigation</title>
+    <!-- Styles und Skripte einbinden -->
+  </head>
+  <body>
+    <div class="tab-container">
+      <button class="tab tab-active" onclick="openCity(event, 'overview')">Übersicht</button>
+      <button class="tab" onclick="openCity(event, 'details')">Details</button>
+      <button class="tab" onclick="openCity(event, 'settings')">Einstellungen</button>
+    </div>
+
+    <div id="overview" class="tab-content tab-hide">Übersichtstext hier</div>
+    <div id="details" class="tab-content tab-hide">Detailstext hier</div>
+    <div id="settings" class="tab-content tab-hide">Einstellungstext hier</div>
+  </body>
+</html>
+```
+
+4. Schließe das Styling für die Tabbed Navigation mit CSS an. Verwende dabei Media Queries, um eine optimale Anpassung des Designs auf verschiedene Gerätegrößen und Orientierungen zu erreichen.
+
+```css
+/* Basic Tabbed Navigation */
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tab {
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.tab.tab-active {
+  background-color: #ccc;
+}
+
+/* Hidden Content */
+
+.tab-content {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #eee;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+```
+
+5. Hinzufügen der JavaScript-Funktion `openCity(event, cityName)`, die die jeweilige Tab-Inhalt sichtbar macht und alle anderen Tab-Inhalte unsichtbar macht.
+
+```javascript
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.add("tab-hide");
+  }
+
+  tablinks = document.getElementsByClassName("tab");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("tab-active");
+  }
+
+  document.getElementById(cityName).classList.remove("tab-hide");
+  evt.currentTarget.classList.add("tab-active");
+}
+```
+
+Mit diesen Schritten hast du eine Grundstruktur für eine Tabbed Navigation geschaffen, die auf drei Tabs basiert und mit JavaScript gesteuert wird. Du kannst diese Seite anpassen oder erweitern, um deine eigenen Inhalte hinzuzufügen.
+

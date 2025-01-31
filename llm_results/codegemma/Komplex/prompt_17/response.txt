@@ -1,0 +1,36 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="SEO-freundliche HTML-Seite mit Meta-Tags">
+    <meta name="description" content="Diese HTML-Seite ist SEO-freundlich und enthält Meta-Tags für Titel, Beschreibung und Keywords.">
+    <meta name="keywords" content="SEO, HTML, Meta-Tags, Titel, Beschreibung, Keywords">
+
+    <title>SEO-freundliche HTML-Seite</title>
+</head>
+<body>
+
+    <h1>SEO-freundliche HTML-Seite</h1>
+
+    <p>Diese HTML-Seite ist SEO-freundlich und enthält Meta-Tags für Titel, Beschreibung und Keywords. Dies ist wichtig für die Google-Indexierung Ihrer Website.</p>
+
+</body>
+</html>
+```
+
+**Was sind Meta-Tags?**
+
+Meta-Tags sind kleine HTML-Tags, die dem Webbrowser und Suchmaschinen wichtige Informationen über Ihre Website liefern. Sie können die Titel, Beschreibung und Keywords Ihrer Seite festlegen.
+
+**Warum sind Meta-Tags wichtig für SEO?**
+
+Meta-Tags spielen eine wichtige Rolle bei der Google-Indexierung Ihrer Website. Google verwendet diese Tags, um Ihre Seite zu verstehen und Ihre Position in den Suchergebnissen zu verbessern.
+
+**Was ist SEO?**
+
+SEO steht für Search Engine Optimization. Es ist die Praxis, Ihre Website für Suchmaschinen zu optimieren, um Ihre Position in den Suchergebnissen zu verbessern.
+

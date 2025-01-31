@@ -1,0 +1,57 @@
+Hier ist ein Beispiel für eine Carousel-Komponente in React, die zwei Schaltflächen für Vorwärts- und Rückwärts-Schaltung enthält:
+```jsx
+import { useState } from 'react';
+
+const Carousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePreviousClick = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const handleNextClick = () => {
+    if (currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  return (
+    <div className="carousel">
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt="Carousel image"
+          className={`carousel-image ${
+            currentIndex === index ? 'active' : ''
+          }`}
+        />
+      ))}
+      <button onClick={handlePreviousClick} className="previous">
+        Vorwärts
+      </button>
+      <button onClick={handleNextClick} className="next">
+        Rückwärts
+      </button>
+    </div>
+  );
+};
+```
+In diesem Beispiel wird die `useState` Hook verwendet, um den aktuellen Index des Carousels zu speichern. Die Schaltflächen `Vorwärts` und `Rückwärts` werden mit den Funktionen `handlePreviousClick` und `handleNextClick` assoziert.
+
+Die Schaltflächen ändern den Index, indem sie die `setCurrentIndex` Statevariable aktualisieren. Wenn der aktuelle Index größer als 0 ist, kann man auf die vorherige Bilddatei wechseln, wenn er kleiner als die Länge der Bilddatenmenge minus 1 ist, kann man auf die nächste Bilddatei wechseln.
+
+In der Ausgabe werden alle Bilddateien als Bilder angezeigt, wobei die aktuelle Bilddatei mit einem "active"-Klassenname gekennzeichnet wird. Die Schaltflächen `Vorwärts` und `Rückwärts` sind auf die aktuellen Index-Werte abgestimmt.
+
+Beispiel-Verwendung:
+```jsx
+<Carousel images={[
+  'https://example.com/image1.jpg',
+  'https://example.com/image2.jpg',
+  'https://example.com/image3.jpg'
+]} />
+```
+Dieses Beispiel setzt voraus, dass Sie die Bilddateien in einem Array von URLs speichern.
+

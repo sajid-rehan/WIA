@@ -1,0 +1,11 @@
+
+
+- [Gewusst wie: Navigieren Sie zu einem Speicherort](navigation-basics/navigate-to-a-destination.md)
+
+  Hier erfahren Sie, wie Sie einen Benutzer auf den Zielspeicherort eines Anwendungscodes navigieren können.
+
+- [Gewusst wie: Abrufen des Geräte Typs des Benutzers](navigation-basics/get-the-users-device-type.md)
+
+  Erfahren Sie, wie Sie die Funktionen der verschiedenen Gerätefamilien Ihrer App nutzen können.
+
+

@@ -1,0 +1,80 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Header</h1>
+  </header>
+  <main>
+    <aside>
+      <h2>Sidebar</h2>
+    </aside>
+    <section>
+      <h2>Hauptinhalt</h2>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023</p>
+  </footer>
+</body>
+</html>
+```
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  width: 25%;
+  background-color: #eee;
+  padding: 1em;
+}
+
+section {
+  width: 75%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+  }
+}
+```
+
+**Beschreibung:**
+
+* Die HTML-Datei enthält einen Header, eine Sidebar und einen Hauptinhalt.
+* Das CSS-Stylesheet definiert eine flexbox-Layout für den Hauptbereich.
+* Die Sidebar hat eine Breite von 25%, während der Hauptinhalt 75% einnimmt.
+* Bei einer Bildschirmgröße von bis zu 768px werden die Seitenelemente auf eine einzelne Spalte angepasst.
+
+**Hinweis:**
+
+* Das Stylesheet kann an Ihre spezifischen Bedürfnisse angepasst werden.
+* Die verwendete Schriftart und die Schriftgröße können an Ihre Bedürfnisse angepasst werden.
+

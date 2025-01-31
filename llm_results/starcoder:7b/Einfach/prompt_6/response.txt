@@ -1,0 +1,79 @@
+
+
+## 2. Löse die Probleme
+
+Die erste Herausforderung besteht darin, dass du den HTML-Code für die einzelnen Elemente auf deinem Computer hast, aber nicht weißt, woher das Bild herkommt und wie es aussehen soll. Du brauchst daher einen kleinen Texteditor oder eine Datei zum Herunterladen um mit dem Erstellen des Projekts zu beginnen.
+
+### 2a. Beschreibe, was du gerade gemacht hast
+
+- Lade die Seite [dieser Webseite](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_website_structure) mit einem Browser herunter und enthält einen Beispiel für das Format der HTML-Tags, indem du diese auf dem Bildschirm siehst
+- Klicke [diesen Link](https://www.w3schools.com/cssref/) um dich zu orientieren, wie man CSS versteht und anwendet.
+- Lade die Seite [Bootstrap CDN](https://getbootstrap.com/docs/4.0/getting-started/download/) mit einem Browser herunter, um Bootstrap-Framework im Web zu verwenden.
+- Erstelle eine neue HTML-Datei mit dem Namen `index.html` in deinem Texteditor (oder andere geeignete Dateien).
+- Verwende das [Bootstrap CDN](https://getbootstrap.com/docs/4.0/getting-started/download/), um die Bootstrap CSS Stylesheets und Javascript Bibliotheken herunterzuladen.
+- Lade deine HTML-Datei in einen Webbrowser hoch, um zu sehen wie es aussehen soll.
+
+### 2b. Erstelle dein Layout mit einem großen Bild
+
+- Füge folgende Zeile am Anfang der Seite ein: `<img src="https://cdn0.iconfinder.com/data/icons/professionals-15/512/Professionals_HTML_512x512.png" alt="Meine Website Logo">`
+  - Falls du das Bild nicht laden kannst, dann schreibe `https://cdn0.iconfinder.com/data/icons/professionals-15/512/Professionals_HTML_512x512.png` in das Attribute `src`.
+- Du kannst die Bilder für verschiedene Systeme [hier](https://www.w3schools.com/html/html5_image_element.asp) finden. Das ist nicht erforderlich, aber dir wird es hoffentlich helfen.
+- Füge einen `class`-Attribut für das Element `<img>` hinzu und vergib ihm den Wert "logo" oder andere Werte. Dieses Attribut braucht du im CSS weiter unten zu verwenden, um die Formatierung des Bilds festzulegen.
+- Überprüfe ob deine HTML Seite funktioniert mit dem folgenden [Link](https://validator.w3.org/). Du kannst auch selbst eine Website erstellen und testen (siehe Lektion 4).
+
+### 2c. Füge einen Titel hinzu, wie er auf der Basis des Bilds aussehen soll
+
+- Füge den folgenden HTML-Code am Anfang von `<body>` ein:
+  - `	<h1 class="display-3">HTML & CSS</h1>
+    <p class="lead">Willkommen zu meiner ersten Website!</p>`
+- Du kannst deinen HTML Code im Brower mit dem [W3C Validator](https://validator.w3.org/) verifizieren, um sicherzustellen, dass er korrekt formatiert ist und wie es soll aussehen.
+- Verwende die Klassen `display-1`, `display-2`, `display-3` etc., wenn du im HTML Elemente `h1`,` h2`, `h3` etc. hinzufügst, damit das Format des Textes festzulegen kannst.
+- Wenn du dir keine Angst dafür hast, dass deine Seite ungewöhnlich aussieht und sie nicht die Vorlage von Bootswatch erkennt, dann verwende die CSS Klassen `text-primary`, `text-secondary` etc., wenn du deinen HTML Elemente hinzufügst.
+
+### 2d. Erstelle einen Button mit einem Call-to-Action Text (CTA)
+
+- Füge den folgenden HTML-Code am Anfang von `<body>` ein:
+  - `<button class="btn btn-primary">Call to Action</button>`
+- Du kannst deinen HTML Code im Brower mit dem [W3C Validator](https://validator.w3.org/) verifizieren, um sicherzustellen, dass er korrekt formatiert ist und wie es soll aussehen.
+- Verwende die Klassen `btn`, `btn-primary` etc., wenn du im HTML Elemente `<button>` hinzufügst, damit das Format des Buttons festzulegen kannst.
+
+### 2e. Lade Bilder in deine Seite hoch
+
+- Füge die folgende Zeile am Anfang von `<body>` ein:
+  - `<img src="https://images.unsplash.com/photo-1549307685-a80b21e5bbfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid" alt="">`
+- Füge das `src`-Attribut dem `<img>` Element hinzu, und verwende das Bild der [Unsplash](https://unsplash.com/s/photos/website) Website. Falls du das Bild nicht laden kannst, dann schreibe `https://images.unsplash.com/photo-1549307685-a80b21e5bbfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80` in das Attribut `src`.
+- Füge den CSS Code hinzu, der die Bildgröße festlegt. Hierfür kannst du deine HTML Seite direkt bearbeiten und folgende Zeile eintragen:
+  - `<img src="https://images.unsplash.com/photo-1549307685-a80b21e5bbfb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid" alt="" width="360px">`
+  - Du kannst die Größe des Bildes mit dem Attribut `width` festlegen.
+- Verwende den Attribut `class`, um das Format der HTML Elemente zu definieren. Füge das Attribut `img-fluid` hinzu, damit das Bild automatisch verkleinert wird, wenn die Größe von `<body>` geändert wird.
+
+### 2f. Füge eine Karte ein, um deine Kontaktdaten zu teilen
+
+- Erstelle einen neuen Block mit dem Namen `contact` in der Datei `index.html`, und füge den folgenden HTML Code hinzu:
+  - `<div class="container">
+    <section id="contact" class="contact mt-4">
+      <div class="section-title mt-5">
+        <h2>Contact</h2>
+        <p>Möchtest du mit mir Kontakt aufnehmen? Dann füge diesen Abschnitt hinzu.</p>
+      </div>
+
+      <div class="row mt-4 mb-4">
+        <div class="col-lg-6">
+          <div class="info">
+            <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Address:</h4>
+              <p>A108 Adam Street<br>New York, NY 535022</p>
+            </div>
+
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p><EMAIL></p>
+            </div>
+
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>(0a623<69 0.912 00. 10.000.21820120351011020100000000010000000000000000000000000000000
+

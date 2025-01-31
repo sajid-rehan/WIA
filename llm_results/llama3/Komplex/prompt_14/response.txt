@@ -1,0 +1,163 @@
+Here is a complete website with a main menu, a product list in grid format, and a contact form:
+
+**HTML:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Webshop</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!-- Hauptmenü -->
+	<nav id="main-nav">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#products">Products</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	
+	<!-- Inhaltsbereich -->
+	<div id="content">
+		<!-- Home-Seite -->
+		<section id="home">
+			<h1>Welcome to my webshop!</h1>
+			<p>Here you can find all kinds of amazing products.</p>
+		</section>
+		
+		<!-- Produktliste -->
+		<section id="products">
+			<h2>Our Products</h2>
+			<div class="product-grid">
+				<!-- Grid-Elements -->
+				<div class="product-item" data-product="1">
+					<img src="product1.jpg" alt="Product 1">
+					<h3>Product 1</h3>
+					<p>$9.99</p>
+				</div>
+				<div class="product-item" data-product="2">
+					<img src="product2.jpg" alt="Product 2">
+					<h3>Product 2</h3>
+					<p>$14.99</p>
+				</div>
+				<!-- weitere Grid-Elements -->
+			</div>
+		</section>
+		
+		<!-- Kontaktformular -->
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<form action="#" method="post" id="contact-form">
+				<label for="name">Name:</label>
+				<input type="text" name="name" required>
+				<br>
+				<label for="email">Email:</label>
+				<input type="email" name="email" required>
+				<br>
+				<label for="message">Message:</label>
+				<textarea name="message" required></textarea>
+				<button type="submit">Send</button>
+			</form>
+		</section>
+	</div>
+	
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2023 My Webshop</p>
+	</footer>
+	
+	<script src="script.js"></script>
+</body>
+</html>
+```
+**CSS (in styles.css file):**
+```css
+/* CSS-Styles für den Hauptmenü */
+#main-nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+#main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CSS-Styles für die Produktliste */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.product-item {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+/* CSS-Styles für das Kontaktformular */
+#contact-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact-form input[type="text"], #contact-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS-Styles für den Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+```
+This is a basic template that you can customize to fit your needs. The main menu uses an unordered list (`<ul>`) with list items (`<li>`) and links (`<a>`). The product list uses the CSS Grid layout to display a grid of product items, each containing an image, title, and price. The contact form uses HTML form elements and some basic styling.
+
+Please note that you will need to create the actual images (e.g., `product1.jpg`, `product2.jpg`) for the product list and add any necessary functionality to the contact form (e.g., email sending).
+

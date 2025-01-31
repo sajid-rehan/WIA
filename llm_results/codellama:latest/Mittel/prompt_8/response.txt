@@ -1,0 +1,39 @@
+
+Eine Möglichkeit, ein responsives Layout zu erstellen, besteht darin, die Größe von Elementen auf der Basis des Bildschirmformats (Breite und Höhe) zu ändern, um sicherzustellen, dass das Layout auf verschiedenen Geräten und Bildschirmen gut aussieht. Hier ist ein Beispiel für ein responsives Layout mit einem Header, einer Sidebar und einem Hauptinhalt:
+```
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsives Layout</title>
+    <style>
+        /* Geräteabhängige Styles */
+        @media screen and (max-width: 768px) {
+            /* Querformat */
+            .header, .sidebar, .main {
+                width: 100%;
+                float: left;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            /* Hochformat */
+            .header, .sidebar, .main {
+                width: 33.33%;
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Hauptinhalt</div>
+    </div>
+</body>
+```
+In diesem Beispiel verwenden wir Media Queries, um die Styles basierend auf der Bildschirmgröße zu ändern. Wenn die Breite des Browsers kleiner als 768 Pixel ist (in Querformat), wird das Layout in einer horizontalen Linie angeordnet, indem die Elemente "Header", "Sidebar" und "Hauptinhalt" auf die gesamte Breite des Browsers ausgerichtet werden. Wenn die Breite größer als 768 Pixel ist (in Hochformat), wird das Layout in drei Spalten ausgerichtet, indem die Elemente "Header", "Sidebar" und "Hauptinhalt" auf eine Breite von 33,33% des Browsers ausgerichtet werden.
+
+Es ist wichtig zu beachten, dass dies nur ein Beispiel für ein responsives Layout ist und je nach Anforderungen andere Styles und Einstellungen erforderlich sein können.
+

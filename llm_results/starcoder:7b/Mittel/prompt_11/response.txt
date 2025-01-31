@@ -1,0 +1,75 @@
+
+author: rick-anderson
+ms.author: riande
+ms.date: 01/30/2007
+ms.assetid: a9df85f9-c88e-4a6b-bcda-23768c67a11d
+msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
+msc.type: authoredcontent
+ms.openlocfilehash: 5e209b4396676681c2b8d7d148100cafb5f0dfae
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520970"
+---
+# <a name="creating-a-customized-sorting-user-interface-c"></a>Erstellen einer benutzerdefinierten Benutzeroberfläche für die Sortierung (C#)
+
+von [<NAME>](https://twitter.com/ScottOnWriting)
+
+[Beispiel-app herunterladen](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_CS.exe) oder [PDF herunterladen](creating-a-customized-sorting-user-interface-cs/_static/datatutorial26cs1.pdf)
+
+> Die Sortier Funktion in ASP.net 2,0 funktioniert automatisch auf der Ebene des Daten Web-Steuer Elements. Der Entwickler muss jedoch eine Benutzeroberfläche für die Sortierung angeben, wenn diese nicht wie von Visual Studio angezeigt vorgesehen ist. In diesem Tutorial wird das Erstellen einer benutzerdefinierten sortier Schnittstelle beschrieben und erläutert, wie Sie die Darstellung der sortier Schnittstellen für unterschiedliche Datenquellen anpassen können.
+
+## <a name="introduction"></a>Einführung
+
+Wie in [vorherigen Tutorials](sorting-data-in-a-datalist-or-repeater-control-cs.md)beim Sortieren des DataList und Repeater handelt es sich um eine automatische Aktion, die auf der Ebene von ASP.net 2,0 basiert. Der Entwickler gibt an, wie das Daten Web-Steuerelement gesortet werden soll, über seine `SortDirection`-Eigenschaft und den entsprechenden BoundFields oder TemplateField s SortExpression-Eigenschaften. Alle DataList s oder Repeater s Elemente sind auf diese Weise automatisch sortiert.
+
+Wenn die Sortier Funktion für ein Daten Web-Steuerelement nicht wie von Visual Studio vorgesehen funktioniert, kann der Entwickler eine benutzerdefinierte Benutzeroberfläche für das Sortieren angeben, indem er seine `SortExpression`-Eigenschaften oder BoundFields s verändert. In diesem Tutorial wird erläutert, wie die Sortier Schnittstelle geändert werden kann und welche Optionen für die Anpassung zur Verfügung stehen, wenn das Daten Web-Steuerelement in einer datenzugriffs Architektur verwendet wird. Insbesondere erfahren Sie, wie Sie die Sortier Schnittstelle für den Bilderkarussell anpassen, der in der [Übersicht über die Master/Detail-Berichterstellung](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) angezeigt wird.
+
+## <a name="step-1-understanding-the-dataaccess-layer"></a>Schritt 1: grundlegendes zum Datenzugriffs Layer
+
+Beim Bilderkarussell in der [Master/Detail-Berichterstellung](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) wird die gefilterte Liste von Produkten aus einer datenzugriffs Komponente abgerufen, `NorthwindWithSprocs`. Diese Klasse enthält eine Reihe von Methoden für das Ausführen der Berichts Abfragen und für den Zugriff auf die Datenbank, um die in der Dropdown Liste angezeigten Daten zu erhalten. Dabei handelt es sich um die gleichen Daten, die im [vorherigen Tutorial](creating-a-data-access-layer-cs.md) verwendet wurden.
+
+Diese Klasse enthält zudem eine Methode für das Ausführen einer Abfrage für einen bestimmten Produkt Bild, wobei der `ProductID` an den Aufrufer übergeben wird:
+
+
+[!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample1.cs)]
+
+Diese Methode kann verwendet werden, um die Imageinformationen für einen bestimmten Produkt Bild abzurufen und in einer Websteuerelement Klasse wie dem GridView oder DetailsView zu decodieren.
+
+Diese Klasse ist auch verantwortlich für das Ausführen von `GetProductsByCategoryID(categoryID)` Abfragen, die eine Liste aller Produkte zurückgeben, die mit der angegebenen *Kategorie* ID übereinstimmen. Dieses Muster wird in den zwei Tutorials zum Implementieren eines Menü Systems verwendet ([zum Ausführen von gespeicherten Prozeduren](../working-with-computed-columns-and-stored-procedures-cs.md) und [Master/Detail-Berichterstellung mit einer DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)).
+
+## <a name="step-2-examining-the-techniques-for-customizing-thesortstring"></a>Schritt 2: Untersuchen der Techniken zum Anpassen von`SortExpression`
+
+Wie bereits in vorherigen Tutorials erläutert, wird `SortExpression` auf der Ebene des Daten Web-Steuer Elements festgelegt. Dies bedeutet, dass die Sortier Funktion für jedes Daten Web-Steuerelement in einer datenzugriffs Architektur gleich ist und automatisch an das gesamte Dataset angepasst wird.
+
+Da der DataList s or Repeater s automatische sortier Funktion verwendet werden kann, sollten wir uns jedoch erst mal genauer ansehen, wie die Sortierung durch Ändern des `SortExpression`werden kann, indem die entsprechenden Eigenschaften von BoundFields und TemplateField s geändert werden. Um das Verständnis der technik zu veranschaulichen, die zum Anpassen von `SortExpression`verwendet wird, müssen wir zuerst den Bilderkarussell eingerichtet haben, wie in [dem vorherigen Tutorial](creating-a-data-access-layer-cs.md)erläutert.
+
+Öffnen Sie die Seite `Sorting.aspx` im Ordner "`CustomSortingUI`", und ziehen Sie ein GridView aus der Toolbox auf den Designer, legen Sie seine Eigenschaften fest, und binden Sie ihn an das ObjectDataSource-Steuerelement, das über einen Aufruf von `GetProductsByCategoryID(categoryID)` verfügt.
+
+[![eine Verbindung mit dem ObjectDataSource-Steuer](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
+
+**Abbildung 1**: Verbinden eines GridView mit dem ObjectDataSource-Steuerelement ([Klicken Sie, um das Bild in voller Größe anzuzeigen](creating-a-customized-sorting-user-interface-cs/_static/image3.png))
+
+Wählen Sie als nächstes die Registerkarte Einschränkungen aus, und klicken Sie auf Hinzufügen, um einen neuen Filter hinzuzufügen (siehe Abbildung 2). Nachdem der Filter erstellt wurde, wenden Sie ihn auf das Feld `CategoryID` an.
+
+[![eine Verbindung mit dem ObjectDataSource-Steuer](creating-a-customized-sorting-user-interface-cs/_static/image53 33. <. <,2
+3.7. 1. ver,
+2.
+  
+ est
+
+ geet on)
+
+
+
+
+
+
+
+
+
+
+
+
+

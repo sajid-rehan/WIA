@@ -1,0 +1,102 @@
+ Hier ist ein Beispiel für ein reaktives Layout mit einem Header, einer Seitenleiste und einem Hauptinhalt, geschrieben in HTML und CSS:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Responsive Layout</title>
+</head>
+<body>
+
+  <header class="site-header">
+    <!-- Header Inhalt hier einfügen -->
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <!-- Seitenleiste Inhalt hier einfügen -->
+    </aside>
+
+    <main class="main-content">
+      <!-- Hauptinhalt hier einfügen -->
+    </main>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+```
+
+Verwendung von CSS Grid oder Flexbox ist empfohlen, um eine flüssige Anpassung am Bildschirmgröße zu erreichen:
+
+```css
+/* Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.site-header,
+.sidebar,
+.main-content {
+  grid-column: span 12;
+}
+
+/* Header */
+.site-header {
+  grid-row: 1;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Seitenleiste */
+.sidebar {
+  grid-row: 2;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Hauptinhalt */
+.main-content {
+  grid-row: 3;
+  padding: 20px;
+}
+```
+
+Wenn Sie wünschen, dass die Seitenleiste nur auf größeren Bildschirme angezeigt wird, können Sie dies mit CSS Media Queries erreichen:
+
+```css
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas: "header header header header"
+                        "sidebar main-content main-content"
+                        "sidebar main-content main-content";
+    grid-template-columns: repeat(4, 1fr) 8fr;
+  }
+
+  .site-header {
+    grid-area: header;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .main-content {
+    grid-area: main-content;
+  }
+}
+```
+

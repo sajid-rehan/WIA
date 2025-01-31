@@ -1,0 +1,58 @@
+
+Hier ist ein Beispiel für eine Webseite mit einer dreispaltigen Grid-Anordnung, einer Navigationsleiste und einer Fußzeile:
+```
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meine Webseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <div class="grid-container">
+      <div class="grid-item"><img src="img1.jpg" alt=""></div>
+      <div class="grid-item"><img src="img2.jpg" alt=""></div>
+      <div class="grid-item"><img src="img3.jpg" alt=""></div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Meine Webseite</p>
+  </footer>
+  
+  <style>
+    /* grid-container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    
+    /* grid-item */
+    .grid-item {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+  </style>
+</body>
+</html>
+```
+In diesem Beispiel verwende ich die CSS-Eigenschaften `display: grid` und `grid-template-columns` zum Definieren eines Grid-Layouts. Die Eigenschaft `repeat(3, 1fr)` definiert, dass es drei Spalten im Grid gibt, und jede Spalte hat eine Breite von 100% des Container-Elements. Die Eigenschaft `gap` definiert den Abstand zwischen den Elementen im Grid.
+
+In der Datei `style.css` habe ich die CSS-Regeln für das Grid-Layout definiert, indem ich Klassen angewendet habe, um das Layout zu definieren. In diesem Beispiel verwende ich die Klasse `grid-container`, um das Container-Element zu definieren und die Klasse `grid-item`, um die Elemente im Grid zu definieren.
+
+In der Navigationsleiste habe ich drei Links hinzugefügt, um den Zugriff auf verschiedene Bereiche der Webseite zu ermöglichen. In der Fußzeile habe ich eine einfache Zeichnung hinzugefügt, um die Urheberrechtshinweise zu definieren.
+

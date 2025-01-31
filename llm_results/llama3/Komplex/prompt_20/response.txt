@@ -1,0 +1,75 @@
+Hier ist ein Beispiel für eine einfache E-Commerce-Seite mit einer Produktseite, einer Bildergalerie, einer Preisangabe und einer Schaltfläche "In den Warenkorb":
+
+**HTML:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Produktübersicht</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		.product-image-gallery {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+		
+		.product-image-gallery img {
+			width: 200px;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Produktübersicht</h1>
+	
+	<!-- Produktseite -->
+	<div class="product-container">
+		<h2>Jacket "Urban Explorer"</h2>
+		<p>Einfach und stylish, der Urban Explorer Jacket ist für alle, die ein Statement machen möchten.</p>
+		
+		<!-- Bildergalerie -->
+		<div class="product-image-gallery">
+			<img src="urban-explorer-jacket-1.jpg" alt="Urban Explorer Jacket 1">
+			<img src="urban-explorer-jacket-2.jpg" alt="Urban Explorer Jacket 2">
+			<img src="urban-explorer-jacket-3.jpg" alt="Urban Explorer Jacket 3">
+		</div>
+		
+		<!-- Preisangabe -->
+		<p>Preis: <span class="price">€99,95</span></p>
+		
+		<!-- Schaltfläche "In den Warenkorb" -->
+		<button onclick="addProductToCart()">In den Warenkorb</button>
+	</div>
+	
+	<script>
+		function addProductToCart() {
+			// Hier wird der Code für die Warenkorb-Funktionierung hinzugefügt
+			alert("Produkt hinzugefügt!");
+		}
+	</script>
+</body>
+</html>
+```
+**Erklärung:**
+
+* Die Produktseite enthält eine Überschrift, einen Kurztext und eine Bildergalerie.
+* Die Bildergalerie besteht aus drei Bildern, die in einer flexiblen Box dargestellt werden.
+* Der Preis wird in einem Absatz angezeigt.
+* Die Schaltfläche "In den Warenkorb" ruft die Funktion `addProductToCart()` auf, wenn sie geklickt wird. Diese Funktion simuliert die Hinzufügung des Produkts zum Warenkorb und zeigt eine Nachricht an.
+
+**Weitere Vorschläge:**
+
+* Du könntest die Produktseite noch um weitere Details wie Größe, Farbe oder Material hinzufügen.
+* Die Bildergalerie könnte auch mit einem Carousel-System oder einer Lightbox-Umgebung realisiert werden.
+* Die Schaltfläche "In den Warenkorb" könnte auch eine Animationswirkung haben, wenn das Produkt hinzugefügt wird.
+* Du könntest auch einen Button hinzufügen, um weitere Informationen zum Produkt zu zeigen (z.B. Details über die Materialien oder die Größen).
+
+Ich hoffe, diese Vorschläge helfen dir bei der Erstellung deiner E-Commerce-Seite!
+

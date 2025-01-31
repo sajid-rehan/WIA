@@ -1,0 +1,27 @@
+```html
+<form action="submit_contact_form.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="message">Nachricht:</label>
+    <textarea name="message" id="message" rows="5" cols="30" required></textarea>
+
+    <input type="submit" value="Senden">
+</form>
+```
+
+**Beschreibung der Felder:**
+
+* **Name:** Erforderliches Textfeld für den Namen des Kunden.
+* **E-Mail:** Erforderliches E-Mail-Feld für die Kontaktaufnahme.
+* **Nachricht:** Erforderliches Textarea-Feld für die Nachricht.
+
+**Hinweis:**
+
+* Die Formularaktion "submit_contact_form.php" sollte auf einen PHP-Skript Adjusted werden, der die Formulardaten absendet und verarbeitet.
+* Die required-Attribute stellen sicher, dass alle Felder korrekt ausgefüllt sind.
+* Die Labels liefern Hinweise für die Benutzer.
+

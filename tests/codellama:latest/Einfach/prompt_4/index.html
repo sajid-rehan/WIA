@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: #007bff;
+            /* Standard-Hintergrundfarbe */
+        }
+
+        button:hover {
+            animation: color-change 2s infinite;
+            /* 2 Sekunden langsam, unendlich oft */
+        }
+
+        @keyframes color-change {
+            0% {
+                background-color: #007bff;
+                /* Startwert */
+            }
+
+            100% {
+                background-color: #0069d9;
+                /* Endwert */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click Me</button>
+</body>
+
+</html>

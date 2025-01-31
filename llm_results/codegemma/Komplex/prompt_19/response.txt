@@ -1,0 +1,83 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mehrstufiges Formular mit Fortschrittsanzeige</title>
+  <script src="script.js"></script>
+</head>
+<body>
+
+<h1>Mehrstufiges Formular</h1>
+
+<form id="multi-step-form">
+  <!-- Schritt 1: persönliche Daten -->
+  <fieldset id="step-1">
+    <h2>Persönliche Daten</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <button type="button" onclick="nextStep(1)">Weiter</button>
+  </fieldset>
+
+  <!-- Schritt 2: Adresse -->
+  <fieldset id="step-2" style="display: none;">
+    <h2>Adresse</h2>
+    <label for="strasse">Straße:</label>
+    <input type="text" id="strasse" required>
+    <label for="ort">Ort:</label>
+    <input type="text" id="ort" required>
+    <button type="button" onclick="nextStep(2)">Weiter</button>
+    <button type="button" onclick="prevStep(2)">Zurück</button>
+  </fieldset>
+
+  <!-- Schritt 3: Zahlungsinformationen -->
+  <fieldset id="step-3" style="display: none;">
+    <h2>Zahlungsinformationen</h2>
+    <label for="kartennummer">Kartennummer:</label>
+    <input type="text" id="kartennummer" required>
+    <label for="csc">CSC-Code:</label>
+    <input type="text" id="csc" required>
+    <button type="submit">Abschließen</button>
+    <button type="button" onclick="prevStep(3)">Zurück</button>
+  </fieldset>
+
+  <!-- Fortschrittsanzeige -->
+  <div id="progress-bar">
+    <div id="progress"></div>
+  </div>
+</form>
+
+</body>
+</html>
+```
+
+**JavaScript-Datei (script.js):**
+
+```javascript
+const steps = document.querySelectorAll('fieldset');
+const progress = document.getElementById('progress');
+
+let currentStep = 1;
+
+function nextStep(step) {
+  steps[step - 1].style.display = 'none';
+  steps[step].style.display = 'block';
+  progress.style.width = (step / steps.length) * 100 + '%';
+  currentStep = step;
+}
+
+function prevStep(step) {
+  steps[step].style.display = 'none';
+  steps[step - 1].style.display = 'block';
+  progress.style.width = ((step - 1) / steps.length) * 100 + '%';
+  currentStep = step - 1;
+}
+```
+
+**Beschreibung:**
+
+* Das Formular wird in drei Schritte eingeteilt.
+* Ein Fortschrittsbalken zeigt den aktuellen Schritt vor dem Benutzer.
+* Der JavaScript-Code steuert die Navigation zwischen den Schritten.
+* Der Benutzer kann mit den Buttons "Weiter" und "Zurück" navigieren.
+* Der Formular wird mit einem abschließenden Button abgeschlossen.
+

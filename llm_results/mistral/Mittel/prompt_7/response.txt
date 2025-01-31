@@ -1,0 +1,68 @@
+ Um eine drei-spalten grid-gesteuerten Website zu erstellen, benötige ich HTML, CSS und möglicherweise JavaScript für interaktive Funktionalität. Hier ist ein Beispiel für die Struktur der Dateien:
+
+**index.html**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Three Column Layout</title>
+  </head>
+  <body>
+    <header class="header">
+      <!-- Navigation soll hier sein -->
+    </header>
+    <main role="main" class="container">
+      <section class="column">
+        <!-- Inhalt für den linken Bereich soll hier sein -->
+      </section>
+      <section class="column">
+        <!-- Inhalt für den mittleren Bereich soll hier sein -->
+      </section>
+      <section class="column">
+        <!-- Inhalt für den rechten Bereich soll hier sein -->
+      </section>
+    </main>
+    <footer class="footer">
+      <!-- Fußzeile soll hier sein -->
+    </footer>
+  </body>
+</html>
+```
+
+**styles.css**
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header,
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  clear: both;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+```
+
+Diese Dateien legen eine dreispalten grid-gesteuerten Website mit einer Header-Navigationsleiste und einer Fußzeile vor, die jeweils die ganze Breite des Browserfensters einnimmt. Jeder Bereich kann eigenen Inhalt bekommen.
+

@@ -1,0 +1,57 @@
+```html
+<section class="hero">
+  <img src="hero-image.jpg" alt="Hero Image">
+  <div class="hero-content">
+    <h1>Hero Title</h1>
+    <p>Hero subtitle</p>
+    <a href="#" class="btn">Call to Action</a>
+  </div>
+</section>
+```
+
+**CSS:**
+
+```css
+.hero {
+  position: relative;
+  height: 500px;
+  background-image: url('hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+```
+
+**Notes:**
+
+* Replace `hero-image.jpg` with the actual path to your hero image.
+* Adjust the `height` of the `hero` section to your desired height.
+* You can customize the `Hero Title`, `Hero Subtitle`, and `Call to Action` text as needed.
+* The `btn` class can be used to style any button element as a call to action.
+

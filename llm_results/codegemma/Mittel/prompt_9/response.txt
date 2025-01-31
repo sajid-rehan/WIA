@@ -1,0 +1,54 @@
+```
+import React, { useState } from 'react';
+
+const LoginForm = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Hier kommt die Logik zum Überprüfen des Benutzernamens und Passworts hin
+    console.log('Benutzername:', username);
+    console.log('Passwort:', password);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="username">Benutzername:</label>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+      />
+
+      <label htmlFor="password">Passwort:</label>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+      />
+
+      <button type="submit">Anmelden</button>
+    </form>
+  );
+};
+
+export default LoginForm;
+```
+
+**Beschreibung:**
+
+* Die Komponente verwendet `useState` um den Benutzernamen und Passwort zu speichern.
+* Das Formular hat zwei Eingabfelder für Benutzernamen und Passwort.
+* Der Benutzer kann auf einen Button klicken, um das Formular zu absenden.
+* Das Formular wird dann mit dem `handleSubmit`-Handler verarbeitet.
+* In diesem Handler wird der Benutzername und Passwort auf der Konsole ausgegeben.
+
+**Hinweis:**
+
+* Die Logik zum Überprüfen des Benutzernamens und Passworts muss an den spezifischen Anwendungsfall angepasst werden.
+* Das Formular verwendet einen einfachen HTML5-Formulartyp.
+* Die Komponente kann an einen anderen Componenten gebunden werden, um den Benutzer anzumelden.
+

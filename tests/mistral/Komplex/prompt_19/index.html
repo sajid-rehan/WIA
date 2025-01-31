@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formular</h1>
+        <form id="myForm">
+            <div class="progress-bar">
+                <span class="step active" id="step1"></span>
+                <span class="step" id="step2"></span>
+                <span class="step" id="step3"></span>
+            </div>
+            <div id="personalInfo" class="form-group">
+                <!-- Persönliche Daten -->
+            </div>
+            <div id="addressInfo" class="form-group" style="display: none;">
+                <!-- Adresse -->
+            </div>
+            <div id="paymentInfo" class="form-group" style="display: none;">
+                <!-- Zahlungsinformationen -->
+            </div>
+            <button type="submit" id="nextButton" onclick="nextStep(event)">Weiter</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

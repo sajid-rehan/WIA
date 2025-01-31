@@ -1,0 +1,43 @@
+```html
+<button id="color-button">Klick mich!</button>
+```
+
+```css
+#color-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#color-button:hover {
+  background-color: darkblue;
+}
+
+#color-button:active {
+  background-color: navy;
+}
+```
+
+```javascript
+const colorButton = document.getElementById('color-button');
+
+colorButton.addEventListener('click', () => {
+  colorButton.style.backgroundColor = 'red';
+});
+```
+
+**Funktionsweise:**
+
+* Die Schaltfläche mit der ID `color-button` wird erstellt.
+* Der CSS-Code stylet die Schaltfläche auf.
+* Die JavaScript-Code hängt ein Ereignislistener auf die Schaltfläche an, der auf das Ereignis `click` anspricht.
+* Bei Klick wird die Hintergrundfarbe der Schaltfläche auf Rot geändert.
+
+**Hinweis:**
+
+* Sie können die Farbe der Schaltfläche im CSS nach Belieben ändern.
+* Sie können das Ereignis `click` durch ein anderes Ereignis ersetzen, z. B. `mouseenter`.
+
